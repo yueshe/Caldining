@@ -1,0 +1,29 @@
+language: ruby
+cache: bundler
+rvm:
+- ruby-2.1.3 # THIS IS WHERE YOU SET THE RUBY VERSION! You'd probably put 1.9.3
+services:
+- postgresql 
+before_script:
+# The next two lines are needed if you are using selenium at all. Travis has not window,
+# so we need to "trick it" into thinking it has one...more or less.
+- export DISPLAY=:99.0 # Declaring which display we will use.
+- sh -e /etc/init.d/xvfb start # Turning on the fake display
+- psql -c 'create database [DATABASE_NAME];' -U postgres
+script:
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec spec/ # IMPORTANT! This runs all of the tests.
+addons:
+  code_climate: # Pulls Code Coverage metrics from Code Climate
+    repo_token: [REDACTED]
+notifications:
+  slack: # Notifies Slack when someone pushes to master...Something that should rarely happen.
+    secure: [REDACTED]
+deploy: # If and ONLY if Travis build succeeds, it automatically is deployed to heroku.
+  provider: heroku
+  api_key:
+    secure: [REDACTED]
+  app:
+    staging: [STAGING APP ON HEROKU]
+    master: [MASTER APP ON HEROKU]
