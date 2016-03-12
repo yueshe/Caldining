@@ -1,49 +1,19 @@
-As a contract manager
-I want to see all artists I am working with
-so that I can keep track of all of my contracts
+  As a Cal dining user
+  I want to see different dining halls listed on the homepage
+  so that I can follow any of them to check its information
+  
+  As a Cal dining user
+  I want to see "Breakfast, lunch and dinner" menus listed on the crossroad page
+  so that I can click on any of them to check its information
 
-As a contract manager
-I want to see all artists who have upcoming contracts
-so that I can abide to my deal
+  As a Cal dining user
+  I want to see food listed on the Crossroad page
+  so that I can click on any of them to check its information
 
-
-As a contract manager
-I want to see all artists who have past contracts
-so that I can find contract history
-
-As a contract manager
-I want to see detail information about a single artist
-so that I can contact them if neccessary
-
-As a contract manager
-I want add an artist 
-so I can bring more artists to the company
-
-As a contract manager
-I want to delete an artist
-so I can remove artists who are no long affliated with CounterPulse
-
-As a contract manager
-I want to modify an artist information
-so I can keep their information up-to-date
-
-As a contract manager
-I want to add a new contract
-so I can record new contracts
-
-As a contract manager
-I want to delete a new contract
-so I can remove unneeded contracts
-
-As a contract manager
-I want to modify an existing contract
-so I can change any wrong information
-
-As a contract manager
-I want to access contract detail
-so I can see how much we need to pay
-
-As a contract manager
-I want to generate a PDF of a contract
-so I can print out a hardcopy
-
+  As a Cal dining user
+  I want to see nutrition value for the food in cal dining
+  so that I can decide if I should eat them
+  
+  As a Cal dining admin
+  I want to edit nutrition values on any food
+  so that my user can always see the updated nutrition value

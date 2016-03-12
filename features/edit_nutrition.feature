@@ -1,5 +1,5 @@
 Feature: Home page
-  As a Cal dining dmin
+  As a Cal dining admin
   I want to edit nutrition values on any food
   so that my user can always see the updated nutrition value
 
