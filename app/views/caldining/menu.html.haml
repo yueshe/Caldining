@@ -1,0 +1,19 @@
+%h1 #{@food.menu} menu
+
+%table#menu
+  %thead
+    %tr
+      %th Breakfast
+      %th Lunch
+      %th Dinner
+      
+  %tbody
+    - @food.where(period: "breakfast").each do |food|
+      %tr
+        %td= link_to "#{@food.name}", nutrition_path(food)
+    - @food.where(period: "lunch").each do |food|
+      %tr
+        %td= link_to "#{@food.name}", nutrition_path(food)
+    - @food.where(period: "dinner").each do |food|
+      %tr
+        %td= link_to "#{@food.name}", nutrition_path(food)

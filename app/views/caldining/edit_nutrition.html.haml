@@ -1,0 +1,23 @@
+%h1 Edit Existing Food Nutrition
+
+= form_tag dining_path(@food), :method => :put do
+
+  = label :food, :calories, 'Calories'
+  = text_field :food, 'calories'
+
+  = label :food, :fat, 'Total Fat'
+  = text_field :food, 'fat'
+
+  = label :food, :carb, 'Tot. Carb'
+  = text_field :food, 'carb'
+
+  = label :food, :cholesterol, 'Cholesterol'
+  = text_field :food, 'cholesterol'
+
+  = label :food, :protein, 'Protein'
+  = text_field :food, 'protein'
+
+  = label :food, :sodium, 'Sodium'
+  = text_field :food, 'sodium'
+
+  = submit_tag 'Update Nutrition Info'
