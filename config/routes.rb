@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :halls
+  resources :halls
   root :to => redirect('/halls')
   
   # The priority is based upon order of creation: first created -> highest priority.
