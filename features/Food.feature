@@ -1,4 +1,4 @@
-Feature: Home page
+Feature: Food
   As a Cal dining user
   I want to see food listed on the Crossroad page
   so that I can click on any of them to check its information

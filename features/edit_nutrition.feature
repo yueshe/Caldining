@@ -1,4 +1,4 @@
-Feature: Home page
+Feature: edit
   As a Cal dining admin
   I want to edit nutrition values on any food
   so that my user can always see the updated nutrition value

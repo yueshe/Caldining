@@ -1,4 +1,4 @@
-Feature: Home page
+Feature: Menu
   As a Cal dining user
   I want to see "Breakfast, lunch and dinner" menus listed on the crossroad page
   so that I can click on any of them to check its information

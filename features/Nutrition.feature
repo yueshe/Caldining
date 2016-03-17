@@ -1,4 +1,4 @@
-Feature: Home page
+Feature: Nutrition
   As a Cal dining user
   I want to see nutrition value for the food in cal dining
   so that I can decide if I should eat them
