@@ -28,6 +28,7 @@ module NavigationHelpers
       
     when /^the Nutrition page for "(.*)"$/
       food = Food.find_by(name: $1)
+      food_path(food)
 
     else
       begin

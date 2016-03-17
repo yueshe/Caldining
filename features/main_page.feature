@@ -1,7 +1,7 @@
 Feature: Home page
   As a Cal dining user
   I want to see different dining halls listed on the homepage
-  so that I can follow any of them to check its informationcd
+  so that I can follow any of them to check its information
 
 Background:
     Given the database is set up
