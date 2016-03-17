@@ -7,9 +7,9 @@ Background:
     Given the database is set up
     
 Scenario: different restaurant on the homepage
-    Given I am on the Crossraod page
+    Given I am on the Crossroads page
     Then I should see "French Fries"
-    When I press "French Fries"
+    When I follow "French Fries"
     Then I should see "Total Fat"
     And I should see "Tot. Carb"
     And I should see "Cholesterol"

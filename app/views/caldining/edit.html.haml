@@ -1,0 +1,8 @@
+%h5 French Fries
+
+%h1 Edit Existing Food
+= form_tag '/frenchfries', :method => :put do
+  = label :food, :calories, 'Calories'
+  = text_field :food, 'calories'
+
+  = submit_tag 'Update'
