@@ -12,5 +12,3 @@ Scenario: different restaurant on the homepage
     And I should see "Cafe3"
     And I should see "Foothill"
     And I should see "CKC"
-    And I should see "Cafe3"
-    

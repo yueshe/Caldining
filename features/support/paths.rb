@@ -21,6 +21,13 @@ module NavigationHelpers
     #
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
+    
+    when /^the "(.*)" page$/
+      hall = Hall.find_by(name: $1)
+      dining_path(hall.id)
+      
+    when /^the Nutrition page for "(.*)"$/
+      food = Food.find_by(name: $1)
 
     else
       begin
