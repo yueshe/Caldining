@@ -8,7 +8,7 @@ Background:
     
 Scenario: different restaurant on the homepage
     Given I am on the homepage
-    Then I should see "Crossroad"
+    Then I should see "Crossroads"
     And I should see "Cafe3"
     And I should see "Foothill"
     And I should see "CKC"
