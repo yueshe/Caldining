@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+halls = [{:name => 'Cafe 3'},
+    	  {:name => 'CKC'},
+    	  {:name => 'Crossroads'},
+    	  {:name => 'Foothill'},
+  	 ]
+
+halls.each do |hall|
+  Hall.create!(hall)
+end
