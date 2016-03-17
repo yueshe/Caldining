@@ -7,5 +7,5 @@ Background:
     Given the database is set up
     
 Scenario: different restaurant on the homepage
-    Given I am on the Crossraod page
+    Given I am on the Crossroads page
     Then I should see "French Fries"
