@@ -4,6 +4,6 @@
 <a href="https://codeclimate.com/github/yueshe/Counterpulse/coverage"><img src="https://codeclimate.com/github/yueshe/Counterpulse/badges/coverage.svg" /></a>
 
 #travis CI
-<img src="https://travis-ci.org/yueshe/Caldining.svg?branch=master"/>
+<img src="https://travis-ci.org/yueshe/Caldining.svg?branch=iteration1-2"/>
 
 Pivotal tracker link: https://www.pivotaltracker.com/n/projects/1545413
