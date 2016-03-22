@@ -12,5 +12,16 @@ halls = [{:name => 'Cafe 3'},
   	 ]
 
 halls.each do |hall|
-  Hall.create!(hall)
+  Hall.find_or_create_by(hall)
 end
+ 
+Item.find_or_create_by(:name => 'French Fries',
+        :calories => 100,
+        :fat => 10,
+        :carb => 10,
+        :cholesterol => 0,
+        :protein => 0,
+        :sodium => 100,
+        :location => "Crossroads",
+        :timeframe => "Tomorrow"
+        )
