@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Calories:</strong>
+  <%= @item.calories %>
+</p>
+
+<p>
+  <strong>Fat:</strong>
+  <%= @item.fat %>
+</p>
+
+<p>
+  <strong>Carb:</strong>
+  <%= @item.carb %>
+</p>
+
+<p>
+  <strong>Cholesterol:</strong>
+  <%= @item.cholesterol %>
+</p>
+
+<p>
+  <strong>Protein:</strong>
+  <%= @item.protein %>
+</p>
+
+<p>
+  <strong>Sodium:</strong>
+  <%= @item.sodium %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @item.location %>
+</p>
+
+<p>
+  <strong>Timeframe:</strong>
+  <%= @item.timeframe %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
