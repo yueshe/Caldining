@@ -1,3 +1,3 @@
 class Hall < ActiveRecord::Base
-    has_many :food
+    has_many :items
 end
