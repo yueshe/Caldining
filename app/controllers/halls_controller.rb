@@ -10,6 +10,7 @@ class HallsController < ApplicationController
   # GET /halls/1
   # GET /halls/1.json
   def show
+    session[:id] = params[:id]
     @items = Item.where(location: @hall.name)
   end
 
