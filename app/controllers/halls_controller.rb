@@ -10,7 +10,6 @@ class HallsController < ApplicationController
   # GET /halls/1
   # GET /halls/1.json
   def show
-    session[:id] = params[:id]
     @items = Item.where(location: @hall.name)
   end
 
@@ -67,6 +66,7 @@ class HallsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_hall
       @hall = Hall.find(params[:id])
+      session[:hall_id] = @hall.id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
