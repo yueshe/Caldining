@@ -1,5 +1,8 @@
+- if user_signed_in?
+  %h5 Welcome Admin
+- else
+  %td= link_to "Sign in", new_user_session_path
 %h1 All Halls
-
 %table#halls
   %thead
     %tr
@@ -13,3 +16,4 @@
         
 %br        
 %td= link_to 'New Hall', new_hall_path
+%td= link_to 'Show All Items', items_path

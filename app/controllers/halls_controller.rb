@@ -1,6 +1,6 @@
 class HallsController < ApplicationController
   before_action :set_hall, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index, :show]
   # GET /halls
   # GET /halls.json
   def index
@@ -66,6 +66,7 @@ class HallsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_hall
       @hall = Hall.find(params[:id])
+      session[:hall_id] = @hall.id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
