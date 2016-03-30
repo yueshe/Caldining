@@ -1,6 +1,6 @@
 class HallsController < ApplicationController
   before_action :set_hall, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index, :show]
   # GET /halls
   # GET /halls.json
   def index
