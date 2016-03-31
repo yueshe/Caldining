@@ -4,7 +4,7 @@ Feature: edit
   so that my user can always see the updated nutrition value
 
 Background:
-    Given the database is set up
+    Given I am logged in
     
 Scenario: different restaurant on the homepage
     Given I am on the Crossroads page

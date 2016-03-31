@@ -4,8 +4,9 @@ Feature: Food
   so that I can click on any of them to check its information
 
 Background:
-    Given the database is set up
+    Given the database is setup
+    Given I am logged in
     
 Scenario: different restaurant on the homepage
-    Given I am on the Crossroads page
+    Given I am on crossroads
     Then I should see "French Fries"

@@ -18,7 +18,7 @@
 # * http://elabs.se/blog/15-you-re-cuking-it-wrong
 #
 
-
+  
 require 'uri'
 require 'cgi'
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
@@ -32,6 +32,38 @@ end
 World(WithinHelpers)
 
 # Single-line step scoper
+Given /^I am logged in$/ do
+  visit 'users/sign_up'
+  fill_in 'Email', :with => 'aaaaaa@gmail.com'
+  fill_in 'Password', :with => 'aaaaaaaa'
+  fill_in 'Password confirmation', :with => 'aaaaaaaa'
+  click_button 'Sign up'
+end
+
+Given /the database is setup/ do
+  halls = [{:name => 'Cafe 3'},
+    	  {:name => 'CKC'},
+    	  {:name => 'Crossroads'},
+    	  {:name => 'Foothill'},
+  	 ]
+
+  halls.each do |hall|
+    Hall.find_or_create_by(hall)
+  end
+  
+  Item.find_or_create_by(:name => 'French Fries',
+        :calories => 100,
+        :fat => 10,
+        :carb => 10,
+        :cholesterol => 0,
+        :protein => 0,
+        :sodium => 100,
+        :location => "Crossroads",
+        :timeframe => "Tomorrow"
+        )
+end  
+
+
 When /^(.*) within (.*[^:])$/ do |step, parent|
   with_scope(parent) { When step }
 end
