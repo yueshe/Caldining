@@ -7,6 +7,7 @@ Background:
     Given the database is setup
     Given I am logged in
     
-Scenario: different restaurant on the homepage
-    Given I am on crossroads
+Scenario: food
+    Given I am on the homepage
+    When I go to crossroads
     Then I should see "French Fries"

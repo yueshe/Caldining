@@ -15,6 +15,10 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+    when /^crossroads$/
+      '/halls/3'
+    when /More nutrition info/
+      '/items/1'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

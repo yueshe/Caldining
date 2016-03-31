@@ -63,6 +63,11 @@ Given /the database is setup/ do
         )
 end  
 
+Given /I am the admin/ do
+  @user = User.find(1)
+  @user.update_attribute(:admin, false)
+end
+
 
 When /^(.*) within (.*[^:])$/ do |step, parent|
   with_scope(parent) { When step }

@@ -4,14 +4,16 @@ Feature: Nutrition
   so that I can decide if I should eat them
 
 Background:
-    Given the database is set up
+    Given the database is setup
     
-Scenario: different restaurant on the homepage
-    Given I am on the Crossraod page
+Scenario: nutrition info
+    Given I am on the homepage
+    When I go to crossroads
     Then I should see "French Fries"
-    When I press "French Fries"
-    Then I should see "Total Fat"
-    And I should see "Tot. Carb"
+    When I follow "More nutrition info"
+    Then I should see "Fat"
+    And I should see "Calories"
+    And I should see "Carb"
     And I should see "Cholesterol"
     And I should see "Protein"
     And I should see "Sodium"
