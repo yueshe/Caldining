@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
+
 
   def item_params
     params.require(:name, :location).permit(:calories, :fat, :cholesterol, :protein, :sodium, :timeframe)
@@ -18,16 +20,25 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
+    if self.auth_admin
+      return 
+    end
     @item = Item.new
   end
 
   # GET /items/1/edit
   def edit
+    if self.auth_admin
+      return 
+    end
   end
 
   # POST /items
   # POST /items.json
   def create
+    if self.auth_admin
+      return 
+    end
     @item = Item.new(item_params)
     respond_to do |format|
       if @item.save
@@ -43,6 +54,9 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
+    if self.auth_admin
+      return 
+    end
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to item_path(@item), notice: 'Item was successfully updated.' }
@@ -57,11 +71,20 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
+    self.auth_admin
     @item.destroy
     respond_to do |format|
       format.html { redirect_to hall_path(session[:hall_id]), notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def auth_admin
+    if !current_user || !current_user.admin
+      redirect_to halls_path, :flash => { :error => 'You are not admin!' }
+      return true
+    end
+    return false
   end
 
   private
