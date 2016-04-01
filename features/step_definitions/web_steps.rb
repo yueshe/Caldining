@@ -65,7 +65,7 @@ end
 
 Given /I am the admin/ do
   @user = User.find(1)
-  @user.update_attribute(:admin, false)
+  @user.update_attribute(:admin, true)
 end
 
 
