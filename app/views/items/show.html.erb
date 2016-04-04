@@ -45,5 +45,7 @@
   <%= @item.timeframe %>
 </p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
+<% if current_user.admin %>
+  <%= link_to 'Edit', edit_item_path(@item) %> |
+<% end %>
 <%= link_to 'Back', hall_path(id: session[:hall_id]) %>

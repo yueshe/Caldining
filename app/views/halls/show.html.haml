@@ -9,6 +9,7 @@
       %tr
         %td= item.name 
         %td= link_to 'More nutrition info', item_path(item)
-    %td= link_to 'Add New Item', new_item_path
+    - if current_user.admin
+      %td= link_to 'Add New Item', new_item_path
 %br
 = link_to 'Back', halls_path
