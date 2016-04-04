@@ -1,13 +1,12 @@
 Feature: Menu
   As a Cal dining user
-  I want to see "Breakfast, lunch and dinner" menus listed on the crossroad page
+  I want to see menus listed on the crossroad page
   so that I can click on any of them to check its information
 
 Background:
-    Given the database is set up
+    Given the database is setup
     
-Scenario: different restaurant on the homepage
-    Given I am on the Crossroads page
-    Then I should see "Breakfast"
-    And I should see "Lunch"
-    And I should see "Dinner"
+Scenario: menu
+    Given I am on the homepage
+    When I go to crossroads
+    Then I should see "Menu Items"

@@ -4,15 +4,18 @@ Feature: edit
   so that my user can always see the updated nutrition value
 
 Background:
-    Given the database is set up
+    Given the database is setup
+    Given I am logged in
+    Given I am the admin
     
-Scenario: different restaurant on the homepage
-    Given I am on the Crossroads page
+Scenario: edit calories
+    Given I am on the homepage
+    When I follow "Crossroads"
     Then I should see "French Fries"
-    When I follow "French Fries"
+    When I follow "More nutrition info"
     Then I should see "Edit"
-    When I press "Edit"
-    And I fill in "2.3g" for "Total Fat"
-    And I press "Finish"
-    Then I should be on the Nutrition page for "French Fries"
-    And I should see "2.3g"
+    When I follow "Edit"
+    Then I should see "Editing Item"
+    When I fill in "1000" for "Calories"
+    And I press "Update Item"
+    Then I should see "1000"
