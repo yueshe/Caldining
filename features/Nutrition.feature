@@ -5,6 +5,7 @@ Feature: Nutrition
 
 Background:
     Given the database is setup
+    Given I am logged in
     
 Scenario: nutrition info
     Given I am on the homepage
