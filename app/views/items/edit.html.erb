@@ -2,6 +2,6 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Back', item_path(@item) %>
+<%= link_to 'Back', item_path(@item), :class => "btn btn-default" %>
 
-<%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Destroy', @item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default" %>

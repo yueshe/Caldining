@@ -8,8 +8,8 @@
     - @items.each do |item|
       %tr
         %td= item.name 
-        %td= link_to 'More nutrition info', item_path(item)
+        %td= link_to 'More nutrition info', item_path(item),  :class => "btn btn-default"
     - if current_user.admin
-      %td= link_to 'Add New Item', new_item_path
+      %td= link_to 'Add New Item', new_item_path,  :class => "btn btn-default"
 %br
-= link_to 'Back', halls_path
+= link_to 'Back', halls_path,  :class => "btn btn-default"

@@ -32,8 +32,8 @@
         <td><%= item.timeframe %></td>
         <td><%= link_to 'Show', item %></td>
         <% if current_user.admin %>
-          <td><%= link_to 'Edit', edit_item_path(item) %></td>
-          <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Edit', edit_item_path(item), :class => "btn btn-default"%></td>
+          <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default"%></td>
         <% end %>
       </tr>
     <% end %>
@@ -42,6 +42,6 @@
 
 <br>
 <% if current_user.admin %>
-  <%= link_to 'New Item', new_item_path %>
+  <%= link_to 'New Item', new_item_path, :class => "btn btn-default" %>
 <% end %>
-<%= link_to 'Show All Halls', halls_path %>
+<%= link_to 'Show All Halls', halls_path, :class => "btn btn-default" %>

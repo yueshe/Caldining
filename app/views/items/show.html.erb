@@ -46,6 +46,6 @@
 </p>
 
 <% if current_user.admin %>
-  <%= link_to 'Edit', edit_item_path(@item) %> |
+  <%= link_to 'Edit', edit_item_path(@item), :class => "btn btn-default" %> |
 <% end %>
-<%= link_to 'Back', hall_path(id: session[:hall_id]) %>
+<%= link_to 'Back', hall_path(id: session[:hall_id]), :class => "btn btn-default" %>
