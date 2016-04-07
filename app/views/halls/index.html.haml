@@ -13,7 +13,7 @@
     - @halls.each do |hall|
       %tr
         %td= hall.name 
-        %td= link_to "See menu for #{hall.name}", hall
+        %td= link_to "See menu for #{hall.name}", hall ,:class => "btn btn-default"
         -if current_user.admin
           %td= link_to 'Edit', edit_hall_path(hall)
           %td= link_to 'Destroy', hall, method: :delete, data: { confirm: 'Are you sure?' }
