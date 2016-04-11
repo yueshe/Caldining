@@ -20,17 +20,12 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    if self.auth_admin
-      return 
-    end
     @item = Item.new
   end
 
   # GET /items/1/edit
   def edit
-    if self.auth_admin
-      return 
-    end
+
   end
 
   # POST /items
@@ -58,13 +53,9 @@ class ItemsController < ApplicationController
       return 
     end
     respond_to do |format|
-      if @item.update(item_params)
-        format.html { redirect_to item_path(@item), notice: 'Item was successfully updated.' }
-        format.json { render :show, status: :ok, location: @item }
-      else
-        format.html { render :edit }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
+      @item.update(item_params)
+      format.html { redirect_to item_path(@item), notice: 'Item was successfully updated.' }
+      format.json { render :show, status: :ok, location: @item }
     end
   end
 
@@ -80,10 +71,6 @@ class ItemsController < ApplicationController
   end
 
   def auth_admin
-    if !current_user || !current_user.admin
-      redirect_to halls_path, :flash => { :error => 'You are not admin!' }
-      return true
-    end
     return false
   end
 

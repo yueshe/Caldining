@@ -19,3 +19,12 @@ Scenario: edit calories
     When I fill in "1000" for "Calories"
     And I press "Update Item"
     Then I should see "1000"
+    
+Scenario: new food
+    Given I am on the homepage
+    When I follow "Crossroads"
+    When I follow "Add New Item"
+    When I fill in "French Fries" for "Name"
+    And I fill in "Crossroads" for "Location"
+    And I press "Create Item"
+    Then I should see "French Fries"

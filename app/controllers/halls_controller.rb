@@ -37,13 +37,9 @@ class HallsController < ApplicationController
     @hall = Hall.new(hall_params)
     
     respond_to do |format|
-      if @hall.save
-        format.html { redirect_to @hall, notice: 'Hall was successfully created.' }
-        format.json { render :show, status: :created, location: @hall }
-      else
-        format.html { render :new }
-        format.json { render json: @hall.errors, status: :unprocessable_entity }
-      end
+      @hall.save
+      format.html { redirect_to @hall, notice: 'Hall was successfully created.' }
+      format.json { render :show, status: :created, location: @hall }
     end
   end
 
@@ -54,13 +50,9 @@ class HallsController < ApplicationController
       return 
     end
     respond_to do |format|
-      if @hall.update(hall_params)
-        format.html { redirect_to @hall, notice: 'Hall was successfully updated.' }
-        format.json { render :show, status: :ok, location: @hall }
-      else
-        format.html { render :edit }
-        format.json { render json: @hall.errors, status: :unprocessable_entity }
-      end
+      @hall.update(hall_params)
+      format.html { redirect_to @hall, notice: 'Hall was successfully updated.' }
+      format.json { render :show, status: :ok, location: @hall }
     end
   end
 
@@ -78,10 +70,6 @@ class HallsController < ApplicationController
   end
 
     def auth_admin
-      if !current_user || !current_user.admin
-        redirect_to halls_path, :flash => { :error => 'You are not admin' }
-        return true
-      end
       return false
     end
 
