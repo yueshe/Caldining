@@ -10,10 +10,10 @@
   %tbody
     - @food.where(period: "breakfast").each do |food|
       %tr
-        %td= link_to "#{@food.name}", nutrition_path(food)
+        %td= link_to "#{@food.name}", nutrition_path(food),  :class => "btn btn-default"
     - @food.where(period: "lunch").each do |food|
       %tr
-        %td= link_to "#{@food.name}", nutrition_path(food)
+        %td= link_to "#{@food.name}", nutrition_path(food), :class => "btn btn-default"
     - @food.where(period: "dinner").each do |food|
       %tr
-        %td= link_to "#{@food.name}", nutrition_path(food)
+        %td= link_to "#{@food.name}", nutrition_path(food), :class => "btn btn-default"

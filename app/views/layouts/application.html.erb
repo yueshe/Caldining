@@ -8,9 +8,9 @@
 </head>
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<p class="error" style="color:red;"><%= flash[:error] %></p>
+<p class="notice bg-info"><%= notice %></p>
+<p class="bg-warning"><%= alert %></p>
+<p class="error bg-danger"><%= flash[:error] %></p>
 <%= yield %>
 </body>
 </html>

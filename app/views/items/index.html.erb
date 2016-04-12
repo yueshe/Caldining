@@ -1,26 +1,26 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Listing Items</h1>
 
+<textarea id="search" name="search_box" cols="25" rows ="1" maxlength="30" placeholder="Search..."></textarea>
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Calories</th>
-      <th>Fat</th>
-      <th>Carb</th>
-      <th>Cholesterol</th>
-      <th>Protein</th>
-      <th>Sodium</th>
-      <th>Location</th>
-      <th>Timeframe</th>
+      <th WIDTH="100">Name</th>
+      <th WIDTH="100">Calories</th>
+      <th WIDTH="100">Fat</th>
+      <th WIDTH="100">Carb</th>
+      <th WIDTH="100">Cholesterol</th>
+      <th WIDTH="100">Protein</th>
+      <th WIDTH="100">Sodium</th>
+      <th WIDTH="100">Location</th>
+      <th WIDTH="100">Timeframe</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
+  
   <tbody>
     <% @items.each do |item| %>
-      <tr>
+      <tr class= "food" id = <%= item.name.gsub(/\s+/, "").downcase%>>
         <td><%= item.name %></td>
         <td><%= item.calories %></td>
         <td><%= item.fat %></td>
@@ -30,15 +30,18 @@
         <td><%= item.sodium %></td>
         <td><%= item.location %></td>
         <td><%= item.timeframe %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', item ,:class => "btn btn-default"%></td>
+        <% if current_user.admin %>
+          <td><%= link_to 'Edit', edit_item_path(item), :class => "btn btn-default"%></td>
+          <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default"%></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Item', new_item_path %>
-<%= link_to 'Show All Halls', halls_path %>
+<% if current_user.admin %>
+  <%= link_to 'New Item', new_item_path, :class => "btn btn-default" %>
+<% end %>
+<%= link_to 'Show All Halls', halls_path, :class => "btn btn-default" %>

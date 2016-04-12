@@ -5,6 +5,7 @@ Feature: Menu
 
 Background:
     Given the database is setup
+    Given I am logged in
     
 Scenario: menu
     Given I am on the homepage
