@@ -335,11 +335,8 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   autotest-rails
-<<<<<<< HEAD
   bootstrap-sass (~> 3.3.3)
-=======
   codeclimate-test-reporter
->>>>>>> f8b93800af43815fc8fe733236b0e9f32d88e7b5
   coffee-rails (~> 4.1.0)
   cucumber-rails
   cucumber-rails-training-wheels

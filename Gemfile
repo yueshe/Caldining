@@ -23,10 +23,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml'
 gem 'devise'
-<<<<<<< HEAD
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'autoprefixer-rails'
-=======
 gem 'simplecov', :require => false
 >>>>>>> f8b93800af43815fc8fe733236b0e9f32d88e7b5
 # Use ActiveModel has_secure_password
