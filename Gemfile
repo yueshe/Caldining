@@ -26,7 +26,6 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'autoprefixer-rails'
 gem 'simplecov', :require => false
->>>>>>> f8b93800af43815fc8fe733236b0e9f32d88e7b5
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
