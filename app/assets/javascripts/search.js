@@ -1,5 +1,12 @@
 var Search = {
   setup: function() {
+    $("#search").keydown(function(e){
+    if (e.keyCode == 13)
+    {
+        e.preventDefault();
+    }
+    });
+    
     $( "#search" ).keyup(function(){
       $("tr.food").each(function() {
         var current_row_id = $(this).attr('id')
