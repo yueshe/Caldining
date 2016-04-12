@@ -21,7 +21,7 @@
   
   <tbody>
     <% @items.each do |item| %>
-      <tr class= "food" id = <%= item.name.gsub(/\s+/, "").downcase%>>
+      <tr class= "food" id = <%= (item.name.gsub(/\s+/, "").downcase + item.location.gsub(/\s+/, "").downcase+item.timeframe.gsub(/\s+/, "").downcase)%>>
         <td><%= item.name %></td>
         <td><%= item.calories %></td>
         <td><%= item.fat %></td>

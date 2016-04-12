@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @halls = Hall.all
   end
 
   # GET /items/1

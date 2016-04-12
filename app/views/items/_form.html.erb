@@ -40,13 +40,13 @@
   </div>
   <div class="field">
     <%= f.label :location %><br>
-    <%= f.text_field :location %>
+    <%= f.collection_select(:location, Hall.all, :name, :name ,{}, { :class => "btn btn-default dropdown-toggle" }) %>
   </div>
   <div class="field">
     <%= f.label :timeframe %><br>
-    <%= f.text_field :timeframe %>
+    <%= f.select :timeframe, ['Breakfast', 'Lunch','Dinner'], {}, { :class => "btn btn-default dropdown-toggle" }%>
   </div>
   <div class="actions">
-    <%= f.submit %>
+      <%= f.submit 'Submit', :class => 'btn btn-primary ' %>
   </div>
 <% end %>
