@@ -21,16 +21,16 @@
   
   <tbody>
     <% @items.each do |item| %>
-      <tr class= "food" id = <%= (item.name.gsub(/\s+/, "").downcase + item.location.gsub(/\s+/, "").downcase+item.timeframe.gsub(/\s+/, "").downcase)%>>
-        <td><%= item.name %></td>
-        <td><%= item.calories %></td>
-        <td><%= item.fat %></td>
-        <td><%= item.carb %></td>
-        <td><%= item.cholesterol %></td>
-        <td><%= item.protein %></td>
-        <td><%= item.sodium %></td>
-        <td><%= item.location %></td>
-        <td><%= item.timeframe %></td>
+      <tr class= "food">
+        <td class = "name"><%= item.name %></td>
+        <td class = "calories"><%= item.calories %></td>
+        <td class = "fat"><%= item.fat %></td>
+        <td class = 'carbs'><%= item.carb %></td>
+        <td class = "cholesterol"><%= item.cholesterol %></td>
+        <td class = "protein"><%= item.protein %></td>
+        <td class = "sodium"><%= item.sodium %></td>
+        <td class = "location"><%= item.location %></td>
+        <td class = "timeframe"><%= item.timeframe %></td>
         <td><%= link_to 'Show', item ,:class => "btn btn-default"%></td>
         <% if current_user.admin %>
           <td><%= link_to 'Edit', edit_item_path(item), :class => "btn btn-default"%></td>
