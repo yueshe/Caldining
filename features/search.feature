@@ -10,6 +10,6 @@ Background:
 Scenario: search a food
     Given I am on the homepage
     When I follow "Show All Items"
-    Then I should see "Search"
-    When I fill in "Search" with "Apple"
-    Then I should see "Apple"
+    Then I should see "Listing Items"
+    When I fill in "search" with "French Fries"
+    Then I should see "French Fries"

@@ -17,7 +17,7 @@ Scenario: edit calories
     When I follow "Edit"
     Then I should see "Editing Item"
     When I fill in "1000" for "Calories"
-    And I press "Update Item"
+    And I press "Submit"
     Then I should see "1000"
     
 Scenario: new food
@@ -25,6 +25,6 @@ Scenario: new food
     When I follow "Crossroads"
     When I follow "Add New Item"
     When I fill in "French Fries" for "Name"
-    And I fill in "Crossroads" for "Location"
-    And I press "Create Item"
+    And I select "Crossroads" from "Location"
+    And I press "Submit"
     Then I should see "French Fries"
