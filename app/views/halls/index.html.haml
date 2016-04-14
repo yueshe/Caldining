@@ -2,7 +2,7 @@
   %h5 Welcome Admin
 -else
   %h5 Welcome User
-%h5= link_to 'User Profile', show_profile_path(current_user.id), :class => "btn btn-default"
+%h5= link_to 'User Profile', show_profile_path(current_user.id)
 %h1 All Halls
 %table#halls
   %thead
