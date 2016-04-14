@@ -1,2 +1,12 @@
 %h1= @user.email
+%h1 Daily Intake
+- @user.intakes.each do |intake|
+    %h1 Intake
+    %h3= intake.date
+    %h5= intake.meal
+    %h5= intake.calories
+    %h5= intake.fat
+    %h5= intake.cholesterol
+    %h5= intake.protein
+    %h5= intake.sodium
 %h5= link_to "Sign Out", destroy_user_session_path, method: :delete 
