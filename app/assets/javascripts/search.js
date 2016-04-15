@@ -23,3 +23,13 @@ var Search = {
   }
 };
 $(Search.setup);
+
+var Add_to_diet = {
+  setup: function() {
+     $(".add").click(function(e){
+       var amount = $(".quantity",this.parentNode).val()
+       e.stopImmediatePropagation();
+     });
+  }
+};
+$(Add_to_diet.setup);
