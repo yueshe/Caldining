@@ -1,18 +1,11 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/ubuntu/workspace/Caldining/app/models/admin.rb": [
-        1,
-        null,
-        null,
-        1,
-        null,
-        null
-      ],
       "/home/ubuntu/workspace/Caldining/app/models/user.rb": [
         1,
         null,
         null,
+        1,
         1,
         null,
         null
@@ -52,7 +45,7 @@
         null,
         null,
         1,
-        27,
+        29,
         null,
         null,
         null,
@@ -224,8 +217,21 @@
         2,
         null,
         null
+      ],
+      "/home/ubuntu/workspace/Caldining/app/controllers/users_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/ubuntu/workspace/Caldining/app/models/intake.rb": [
+        1,
+        1,
+        null
       ]
     },
-    "timestamp": 1460585290
+    "timestamp": 1460772018
   }
 }
