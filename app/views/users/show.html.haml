@@ -1,12 +1,10 @@
 %h1= @user.email
-%h1 Daily Intake
-- @user.intakes.each do |intake|
-    %h3= "Date:" + intake.date.strftime("%m/%d/%Y")
-    %h5= "Meal: " + intake.meal
-    %h5= "Calories: "+ intake.calories.to_s
-    %h5= "Fat: " + intake.fat.to_s
-    %h5= "Cholesterol: " + intake.cholesterol.to_s
-    %h5= "Protein: " + intake.protein.to_s
-    %h5= "Sodium: " +intake.sodium.to_s
+%h1 Daily items
+- @items.each do |item|
+    %h5= "Calories: "+ item.calories.to_s
+    %h5= "Fat: " + item.fat.to_s
+    %h5= "Cholesterol: " + item.cholesterol.to_s
+    %h5= "Protein: " + item.protein.to_s
+    %h5= "Sodium: " + item.sodium.to_s
 %h5= link_to "Sign Out", destroy_user_session_path, method: :delete 
 %td= link_to 'Show All Items', items_path, :class => "btn btn-default"
