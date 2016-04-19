@@ -12,7 +12,7 @@ Scenario: edit calories
     Given I am on the homepage
     When I follow "Crossroads"
     Then I should see "French Fries"
-    When I follow "More nutrition info"
+    When I follow "French Fries"
     Then I should see "Edit"
     When I follow "Edit"
     Then I should see "Editing Item"

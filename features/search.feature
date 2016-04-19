@@ -11,5 +11,5 @@ Scenario: search a food
     Given I am on the homepage
     When I follow "Show All Items"
     Then I should see "Listing Items"
-    When I fill in "search" with "French Fries"
+    When I fill in "search" with "FRENCHFRIES"
     Then I should see "French Fries"
