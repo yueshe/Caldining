@@ -45,6 +45,7 @@
   <%= @item.timeframe %>
 </p>
 
+<td class = "add">Add to Nutrition Log</td>
     
 <%= link_to 'Edit', edit_item_path(@item), :class => "btn btn-default" if current_user.admin %>
 <%= link_to 'Back', hall_path(id: (Hall.find_by name: @item.location).id),:class => "btn btn-default" %>

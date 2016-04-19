@@ -1,0 +1,41 @@
+<%= javascript_include_tag('search.js') %>
+<%= javascript_include_tag('add_to_diet.js') %>
+<p id="notice"><%= notice %></p>
+<h1>Nutrition Log</h1>
+
+<textarea id="search" name="search_box" cols="25" rows ="1" maxlength="50" placeholder="Search..."></textarea>
+<table>
+  <thead>
+    <tr>
+      <th WIDTH="100">Quantity</th>
+      <th WIDTH="100">Name</th>
+      <th WIDTH="100">Calories</th>
+      <th WIDTH="100">Fat</th>
+      <th WIDTH="100">Carb</th>
+      <th WIDTH="100">Cholesterol</th>
+      <th WIDTH="100">Protein</th>
+      <th WIDTH="100">Sodium</th>
+      <th WIDTH="100">Location</th>
+      <th WIDTH="100">Timeframe</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @items.each do |item| %>
+      <tr class= "food">
+        <td class = "name"><%= link_to item.name, item %></td>
+        <td class = "calories"><%= item.calories %></td>
+        <td class = "fat"><%= item.fat %></td>
+        <td class = 'carbs'><%= item.carb %></td>
+        <td class = "cholesterol"><%= item.cholesterol %></td>
+        <td class = "protein"><%= item.protein %></td>
+        <td class = "sodium"><%= item.sodium %></td>
+        <td class = "location"><%= item.location %></td>
+        <td class = "timeframe"><%= item.timeframe %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Show All Halls', halls_path, :class => "btn btn-default" %>
