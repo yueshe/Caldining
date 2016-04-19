@@ -9,3 +9,4 @@
     %h5= "Protein: " + intake.protein.to_s
     %h5= "Sodium: " +intake.sodium.to_s
 %h5= link_to "Sign Out", destroy_user_session_path, method: :delete 
+%td= link_to 'Show All Items', items_path, :class => "btn btn-default"

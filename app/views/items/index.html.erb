@@ -25,7 +25,7 @@
     <% @items.each do |item| %>
       <tr class= "food">
         <td><textarea class = "quantity" cols="5" rows ="1" maxlength="5" placeholder="0.."></textarea></td>
-        <td class = "name"><%= item.name %></td>
+        <td class = "name"><%= link_to item.name, item %></td>
         <td class = "calories"><%= item.calories %></td>
         <td class = "fat"><%= item.fat %></td>
         <td class = 'carbs'><%= item.carb %></td>
@@ -35,7 +35,7 @@
         <td class = "location"><%= item.location %></td>
         <td class = "timeframe"><%= item.timeframe %></td>
         <td class = "add"><p class = "btn btn-default ">Add to Diet</p></td>
-        <td><%= link_to 'Show', item ,:class => "btn btn-default"%></td>
+        <td><%= link_to 'Show', item, :class => "btn btn-default"%></td>
         <% if current_user.admin %>
           <td><%= link_to 'Edit', edit_item_path(item), :class => "btn btn-default"%></td>
           <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default"%></td>

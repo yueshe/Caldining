@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users do
+    resources :items
+  end
   resources :items
-  resources :halls
   resources :halls
   root :to => redirect('/halls')
   get 'users/:id' => 'users#show', as: 'show_profile'

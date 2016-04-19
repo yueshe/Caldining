@@ -9,5 +9,5 @@ Background:
     
 Scenario: menu
     Given I am on the homepage
-    When I go to crossroads
+    When I follow "Crossroads"
     Then I should see "Menu Items"
