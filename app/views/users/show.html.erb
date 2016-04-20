@@ -22,7 +22,7 @@
   </thead>
   
   <tbody>
-    <% @items.each do |item| %>
+    <% @user_items.each do |item| %>
       <tr class= "food">
         <td class = "name"><%= link_to item.name, item %></td>
         <td class = "calories"><%= item.calories %></td>

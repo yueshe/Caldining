@@ -17,6 +17,7 @@
       ],
       "/home/ubuntu/workspace/Caldining/app/models/item.rb": [
         1,
+        1,
         null
       ],
       "/home/ubuntu/workspace/Caldining/app/controllers/application_controller.rb": [
@@ -228,6 +229,6 @@
         null
       ]
     },
-    "timestamp": 1461102794
+    "timestamp": 1461188805
   }
 }
