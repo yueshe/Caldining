@@ -1,6 +1,7 @@
 <%= javascript_include_tag('search.js') %>
 <%= javascript_include_tag('add_to_diet.js') %>
 <p id="notice"><%= notice %></p>
+<%= @user.email %>
 <h1>Nutrition Log</h1>
 
 <textarea id="search" name="search_box" cols="25" rows ="1" maxlength="50" placeholder="Search..."></textarea>
