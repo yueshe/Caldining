@@ -71,6 +71,16 @@ class ItemsController < ApplicationController
     end
   end
 
+
+  def add_to_log
+    @user = User.find(current_user.id)
+    @item = Item.find(params[:id])
+    @user.items << @item
+    respond_to do |format|
+      format.html { redirect_to item_path(@item), notice: "Item added to nutrition log" }
+    end
+  end
+    
   def auth_admin
     return false
   end
