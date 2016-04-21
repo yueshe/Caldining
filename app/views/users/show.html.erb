@@ -10,8 +10,8 @@
 <table>
   <thead>
     <tr>
-      <th WIDTH="100">Quantity</th>
-      <th WIDTH="100">Name</th>
+      <th WIDTH="100">Servings</th>
+      <th WIDTH="100">Item</th>
       <th WIDTH="100">Calories</th>
       <th WIDTH="100">Fat</th>
       <th WIDTH="100">Carb</th>
@@ -25,8 +25,9 @@
   </thead>
   
   <tbody>
-    <% @user_items.each do |item| %>
+    <% @user_items.group(:id).each do |item| %>
       <tr class= "food">
+        <td class = "servings"><%= @user_items.count(:id) %></td>
         <td class = "name"><%= link_to item.name, item %></td>
         <td class = "calories"><%= item.calories %></td>
         <td class = "fat"><%= item.fat %></td>
