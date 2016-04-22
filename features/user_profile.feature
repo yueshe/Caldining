@@ -15,3 +15,16 @@ Scenario: user profile
 Scenario: add a food
     Given I am on the homepage
     When I follow "Show All Items"
+    And I click on "Add"
+    When I go to the User page
+    Then I should see "French Fries"
+    And I should see "100 cal"
+
+Scenario: Categories
+    Given I am on the homepage
+    When I follow "Show All Items"
+    And I click on "Add"
+    When I go to the User page
+    Then I should see "Breakfast"
+    And I should see "Lunch"
+    And I should see "Dinner"

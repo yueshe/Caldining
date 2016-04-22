@@ -13,3 +13,8 @@ Scenario: search a food
     Then I should see "Listing Items"
     When I fill in "search" with "FRENCHFRIES"
     Then I should see "French Fries"
+
+Scenario: search on user profile
+  Given I am on the user page
+  When I fill in "search" with "FRENCHFRIES"
+  Then I should see "French Fries"
