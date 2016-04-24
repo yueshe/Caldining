@@ -58,11 +58,11 @@ class ParserWorker
     
       # Check nutrition availability. If unavailable, add to items and skip to next iter.
       if item_doc.css("font").select{|candidate| candidate.css("i").text =~ /^Nutritional Information is not available/}.empty?
-        curr_item.nutrition_available = true # need to add nutrition boolean to Item activerecord
+        curr_item.nutrition_available = true
       else
         #curr_item.nutrition_available = false
-        #curr_item.save
-        #curr_item.touch
+        curr_item.save
+        curr_item.touch
         next
       end
   
