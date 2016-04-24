@@ -96,6 +96,6 @@ p#notice, .bg-danger, .bg-info, .bg-warning, .bg-success{
 }
 
 textarea {
-  resize: vertical;
+  resize: none;
   background: #F2F9FC;
 }

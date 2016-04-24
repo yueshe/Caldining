@@ -12,7 +12,7 @@ var Search = {
         var target = $('#search').val().replace(/ /g,'').toLowerCase()
         var food_name = $("td.name", this).text().replace(/ /g,'').toLowerCase()
         var food_date = $("td.mealtime", this).html().replace(/ /g,'').toLowerCase()
-        var food_location = $("td.location", this).html().replace(/ /g,'').toLowerCase()
+        var food_location = $("td.location", this).text().replace(/ /g,'').toLowerCase()
         if (food_name.includes(target) || food_location == target || food_date == target) {
           $(this).show()
         } else {
