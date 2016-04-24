@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 @import "bootstrap-sprockets";
 @import "bootstrap";
+=======
+@import "bootstrap-sprockets"
+@import "bootstrap"
+>>>>>>> parent of 1bddac6... change to sass
 
 html {
   overflow-y: scroll;
