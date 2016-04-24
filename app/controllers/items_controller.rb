@@ -55,7 +55,7 @@ class ItemsController < ApplicationController
     end
     respond_to do |format|
       @item.update(item_params)
-      format.html { redirect_to item_path(@item), notice: 'Item was successfully updated.' }
+      format.html { redirect_to :back, notice: 'Item was successfully updated.' }#item_path(@item)
       format.json { render :show, status: :ok, location: @item }
     end
   end
