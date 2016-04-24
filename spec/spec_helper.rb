@@ -1,5 +1,3 @@
-require "codeclimate-test-reporter"
-CodeClimate::TestReporter.start
 require 'simplecov'
 SimpleCov.start 'rails'
 # This file is copied to spec/ when you run 'rails generate rspec:install'
