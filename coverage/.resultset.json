@@ -47,7 +47,7 @@
         null,
         null,
         1,
-        41,
+        34,
         null,
         null,
         null,
@@ -98,8 +98,8 @@
         null,
         null,
         1,
-        6,
-        6,
+        4,
+        4,
         null,
         null,
         null,
@@ -231,6 +231,7 @@
         null,
         null,
         null
+<<<<<<< HEAD
       ],
       "/home/ubuntu/workspace/Caldining/app/controllers/intakes_controller.rb": [
 =======
@@ -472,5 +473,10 @@
     },
     "timestamp": 1461495895
 >>>>>>> dc43f2610effb6ca4c660183e4eb1b1697cafce1
+=======
+      ]
+    },
+    "timestamp": 1461343126
+>>>>>>> parent of 1bddac6... change to sass
   }
 }

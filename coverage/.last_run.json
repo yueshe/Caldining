@@ -1,9 +1,13 @@
 {
   "result": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "covered_percent": 38.08
 =======
     "covered_percent": 3.34
 >>>>>>> dc43f2610effb6ca4c660183e4eb1b1697cafce1
+=======
+    "covered_percent": 91.67
+>>>>>>> parent of 1bddac6... change to sass
   }
 }

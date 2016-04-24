@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160424023301) do
 
+<<<<<<< HEAD
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -36,6 +37,8 @@ ActiveRecord::Schema.define(version: 20160424023301) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> 93c1f326659643685425544b80217c3dcdb37bf0
   create_table "halls", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -71,7 +74,7 @@ ActiveRecord::Schema.define(version: 20160424023301) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.boolean  "nutrition_available", default: false
-    t.integer  "calories_from_fat",   default: 0
+    t.integer  "calories_from_fat"
     t.string   "mealtime"
   end
 
