@@ -23,5 +23,5 @@ Item.find_or_create_by(:name => 'French Fries',
         :protein => 0,
         :sodium => 100,
         :location => "Crossroads",
-        :timeframe => "Tomorrow"
+        :date => "Tomorrow"
         )
