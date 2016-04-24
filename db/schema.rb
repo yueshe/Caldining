@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420214500) do
+ActiveRecord::Schema.define(version: 20160424023301) do
 
   create_table "halls", force: :cascade do |t|
     t.string   "name"
@@ -22,15 +22,18 @@ ActiveRecord::Schema.define(version: 20160420214500) do
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.decimal  "calories"
-    t.decimal  "fat"
-    t.decimal  "carb"
-    t.decimal  "cholesterol"
-    t.decimal  "protein"
-    t.decimal  "sodium"
+    t.decimal  "fat",                 default: 0.0
+    t.decimal  "carb",                default: 0.0
+    t.decimal  "cholesterol",         default: 0.0
+    t.decimal  "protein",             default: 0.0
+    t.decimal  "sodium",              default: 0.0
     t.string   "location"
-    t.string   "timeframe"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "date"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.boolean  "nutrition_available", default: false
+    t.integer  "calories_from_fat"
+    t.string   "mealtime"
   end
 
   create_table "items_users", id: false, force: :cascade do |t|

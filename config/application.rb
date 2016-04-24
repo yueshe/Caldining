@@ -34,5 +34,6 @@ module Caldining
     config.assets.initialize_on_precompile = false
     config.assets.precompile += ['search.js']
     config.assets.precompile += ['add_to_diet.js']
+    config.active_job.queue_adapter = :sidekiq
   end
 end
