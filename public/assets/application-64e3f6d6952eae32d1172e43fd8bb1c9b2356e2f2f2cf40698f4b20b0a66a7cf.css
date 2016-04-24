@@ -1,0 +1,101 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  
+}
+
+section {
+  overflow: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+div {
+  color: #696969;
+  padding: 5px 0;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  color: #696969;
+}
+
+h3, h5 {
+  font-size: 1em;
+}
+
+
+h1 {
+  font-size: 2.5em;
+  color: #696969;
+  letter-spacing: -1px;
+  padding: 3px 0;
+  text-align: center;
+  border: 1px solid #696969;
+}
+
+td {
+  color: #6E6E6E;
+  padding: 0 10px;
+  border: 1px solid #B5B5B5;
+}
+
+.btn-default {
+  color: #1d7abf;
+}
+
+.btn-default:hover {
+  text-decoration: none;
+  background: #EDEDED; 
+}
+
+th {
+  color: #696969;
+  border: 1px solid #B5B5B5;
+}
+
+table {
+  width: 100%;
+  color: #F8F8F2;
+  padding: 5px 0;
+  font-size: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  display: inline;
+  color: #1d7abf;
+}
+
+a:hover {
+  text-decoration: none;
+  background: #EDEDED;
+}
+
+p {
+  color: #6E6E6E;
+}
+
+p#notice, .bg-danger, .bg-info, .bg-warning, .bg-success{
+  background: #E0EAF3; 
+}
+
+textarea {
+  resize: vertical;
+  background: #F2F9FC;
+}

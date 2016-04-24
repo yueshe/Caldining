@@ -31,11 +31,32 @@ ActiveRecord::Schema.define(version: 20160424023301) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "dailyreports", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "halls", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "intakes", force: :cascade do |t|
+    t.datetime "date"
+    t.string   "meal"
+    t.decimal  "calories"
+    t.decimal  "fat"
+    t.decimal  "carb"
+    t.decimal  "cholesterol"
+    t.decimal  "protein"
+    t.decimal  "sodium"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+  end
+
+  add_index "intakes", ["user_id"], name: "index_intakes_on_user_id"
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -46,7 +67,7 @@ ActiveRecord::Schema.define(version: 20160424023301) do
     t.decimal  "protein",             default: 0.0
     t.decimal  "sodium",              default: 0.0
     t.string   "location"
-    t.string   "date"
+    t.date     "timeframe"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.boolean  "nutrition_available", default: false

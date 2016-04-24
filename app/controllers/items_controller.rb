@@ -93,6 +93,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :calories, :fat, :carb, :cholesterol, :protein, :sodium, :location, :date)
+      params.require(:item).permit(:name, :calories, :fat, :carb, :cholesterol, :protein, :sodium, :location, :mealtime)
     end
 end
