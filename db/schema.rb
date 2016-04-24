@@ -11,29 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160331003854) do
-
-  create_table "admins", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-  end
-
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-=======
-ActiveRecord::Schema.define(version: 20160420214500) do
->>>>>>> e7fb362b3d198fdd6ec43c7fc9af5397ac0b5120
+ActiveRecord::Schema.define(version: 20160424023301) do
 
   create_table "halls", force: :cascade do |t|
     t.string   "name"
@@ -44,15 +22,18 @@ ActiveRecord::Schema.define(version: 20160420214500) do
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.decimal  "calories"
-    t.decimal  "fat"
-    t.decimal  "carb"
-    t.decimal  "cholesterol"
-    t.decimal  "protein"
-    t.decimal  "sodium"
+    t.decimal  "fat",                 default: 0.0
+    t.decimal  "carb",                default: 0.0
+    t.decimal  "cholesterol",         default: 0.0
+    t.decimal  "protein",             default: 0.0
+    t.decimal  "sodium",              default: 0.0
     t.string   "location"
-    t.string   "timeframe"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "date"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.boolean  "nutrition_available", default: false
+    t.integer  "calories_from_fat"
+    t.string   "mealtime"
   end
 
   create_table "items_users", id: false, force: :cascade do |t|

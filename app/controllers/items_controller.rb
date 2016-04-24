@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
 
   def item_params
-    params.require(:name, :location).permit(:calories, :fat, :cholesterol, :protein, :sodium, :timeframe)
+    params.require(:name, :location, :mealtime).permit(:calories, :fat, :cholesterol, :protein, :sodium, :date, :calories_from_fat, :nutrition_available)
   end
 
   # GET /items
@@ -93,6 +93,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :calories, :fat, :carb, :cholesterol, :protein, :sodium, :location, :timeframe)
+      params.require(:item).permit(:name, :calories, :fat, :carb, :cholesterol, :protein, :sodium, :location, :date)
     end
 end

@@ -59,7 +59,7 @@ Given /the database is setup/ do
         :protein => 0,
         :sodium => 100,
         :location => "Crossroads",
-        :timeframe => "Tomorrow"
+        :date => "Tomorrow"
         )
 end  
 
