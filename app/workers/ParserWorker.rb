@@ -1,5 +1,5 @@
-#require 'rubygems'
-#require 'open-uri'
+require 'rubygems'
+require 'open-uri'
 require 'nokogiri'
 require 'sidekiq'
 
@@ -27,7 +27,7 @@ class ParserWorker
     positions = {"Crossroads" => 0, "Cafe 3" => 1, "Foothill" => 2, "Clark Kerr" => 3}
     
     # Clear each item's list of menus, and each menu's list of items
-    Item.find(:date => 3.months.ago).each do |item|
+    Item.where(:date => 3.months.ago).each do |item|
       item.clear
       item.save
     end

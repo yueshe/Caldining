@@ -35,5 +35,7 @@ module Caldining
     config.assets.precompile += ['search.js']
     config.assets.precompile += ['add_to_diet.js']
     config.active_job.queue_adapter = :sidekiq
+    #config.eager_load_paths += ["#{config.root}/app/workers"]
+    #config.autoload_paths += ["#{config.root}/app/workers"]
   end
 end
