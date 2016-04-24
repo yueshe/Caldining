@@ -1,3 +1,4 @@
+# adapted from https://github.com/veersuvrat/CalDining-169/blob/master/app/workers/parser_worker.rb
 require 'rubygems'
 require 'open-uri'
 require 'nokogiri'
