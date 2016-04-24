@@ -94,6 +94,10 @@ When /^(?:|I )follow "([^"]*)"$/ do |link|
   first(:link, link).click
 end
 
+When /^(?:|I )click on "([^"]*)"$/ do |link|
+  click_on(link)
+end
+
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end

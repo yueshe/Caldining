@@ -11,5 +11,25 @@ Scenario: search a food
     Given I am on the homepage
     When I follow "Show All Items"
     Then I should see "Listing Items"
-    When I fill in "search" with "French Fries"
+    When I fill in "search" with "FRENCHFRIES"
     Then I should see "French Fries"
+
+Scenario: search on user profile - food
+  Given I am on the user page
+  When I fill in "search" with "FRENCHFRIES"
+  Then I should see "French Fries"
+
+Scenario: search on user profile - meal 
+  Given I am on the user page
+  When I fill in "search" with "Breakfast"
+  Then I should not see "French Fries"
+
+Scenario: search on user profile - location
+  Given I am on the user page
+  When I fill in "search" with "Cafe 3"
+  Then I should see "French Fries"
+  
+Scenario: search on user profile - sad
+  Given I am on the user page
+  When I fill in "search" with "8790ipojnkhu"
+  Then I should not see "French Fries"

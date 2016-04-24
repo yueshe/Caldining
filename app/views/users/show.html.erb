@@ -1,14 +1,17 @@
 <%= javascript_include_tag('search.js') %>
 <%= javascript_include_tag('add_to_diet.js') %>
 <p id="notice"><%= notice %></p>
-<h1>Listing Items</h1>
+<%= @user.email %>
+<br>
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+<h1>Nutrition Log</h1>
 
 <textarea id="search" name="search_box" cols="25" rows ="1" maxlength="50" placeholder="Search..."></textarea>
 <table>
   <thead>
     <tr>
-      <th WIDTH="100">Quantity</th>
-      <th WIDTH="100">Name</th>
+      <th WIDTH="100">Servings</th>
+      <th WIDTH="100">Item</th>
       <th WIDTH="100">Calories</th>
       <th WIDTH="100">Fat</th>
       <th WIDTH="100">Carb</th>
@@ -22,9 +25,9 @@
   </thead>
   
   <tbody>
-    <% @items.each do |item| %>
+    <% @user_items.group(:id).each do |item| %>
       <tr class= "food">
-        <td><textarea class = "quantity" cols="5" rows ="1" maxlength="5" placeholder="0.."></textarea></td>
+        <td class = "servings"><%= @user_items.count(:id) %></td>
         <td class = "name"><%= link_to item.name, item %></td>
         <td class = "calories"><%= item.calories %></td>
         <td class = "fat"><%= item.fat %></td>
@@ -34,19 +37,9 @@
         <td class = "sodium"><%= item.sodium %></td>
         <td class = "location"><%= item.location %></td>
         <td class = "timeframe"><%= item.timeframe %></td>
-        <td class = "add"><p class = "btn btn-default ">Add to Diet</p></td>
-        <td><%= link_to 'Show', item, :class => "btn btn-default"%></td>
-        <% if current_user.admin %>
-          <td><%= link_to 'Edit', edit_item_path(item), :class => "btn btn-default"%></td>
-          <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default"%></td>
-        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-<% if current_user.admin %>
-  <%= link_to 'New Item', new_item_path, :class => "btn btn-default" %>
-<% end %>
-<%= link_to 'Show All Halls', halls_path, :class => "btn btn-default" %>
+<%= link_to "Show All Halls", halls_path, :class => "btn btn-default" %>

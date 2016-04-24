@@ -9,5 +9,5 @@ Background:
     
 Scenario: food
     Given I am on the homepage
-    When I go to crossroads
+    When I click on "Crossroads"
     Then I should see "French Fries"

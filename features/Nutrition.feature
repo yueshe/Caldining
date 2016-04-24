@@ -7,11 +7,11 @@ Background:
     Given the database is setup
     Given I am logged in
     
-Scenario: nutrition info
+Scenario: nutrition
     Given I am on the homepage
-    When I go to crossroads
+    When I click on "Crossroads"
     Then I should see "French Fries"
-    When I follow "More nutrition info"
+    When I follow "French Fries"
     Then I should see "Fat"
     And I should see "Calories"
     And I should see "Carb"

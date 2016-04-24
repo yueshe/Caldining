@@ -1,4 +1,4 @@
-Feature: edit
+Feature: edit nutrition
   As a Cal dining admin
   I want to edit nutrition values on any food
   so that my user can always see the updated nutrition value
@@ -10,11 +10,11 @@ Background:
     
 Scenario: edit calories
     Given I am on the homepage
-    When I follow "Crossroads"
+    When I click on "Crossroads"
     Then I should see "French Fries"
-    When I follow "More nutrition info"
+    When I click on "French Fries"
     Then I should see "Edit"
-    When I follow "Edit"
+    When I click on "Edit"
     Then I should see "Editing Item"
     When I fill in "1000" for "Calories"
     And I press "Submit"
@@ -22,7 +22,7 @@ Scenario: edit calories
     
 Scenario: new food
     Given I am on the homepage
-    When I follow "Crossroads"
+    When I click on "Crossroads"
     When I follow "Add New Item"
     When I fill in "French Fries" for "Name"
     And I select "Crossroads" from "Location"

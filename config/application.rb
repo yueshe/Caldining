@@ -33,5 +33,6 @@ module Caldining
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.initialize_on_precompile = false
     config.assets.precompile += ['search.js']
+    config.assets.precompile += ['add_to_diet.js']
   end
 end

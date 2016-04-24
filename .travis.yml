@@ -7,3 +7,11 @@ rvm:
 addons:
     code_climate:
         repo_token: edf19e00f8880db612cdf29847870505641b5ad791cbc8cd4f5ce94c66406131
+        
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec
+  - bundle exec cucumber
+after_script:
+  - bundle exec rake send_to_codeclimate
