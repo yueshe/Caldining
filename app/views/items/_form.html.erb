@@ -43,8 +43,8 @@
     <%= f.collection_select(:location, Hall.all, :name, :name ,{}, { :class => "btn btn-default dropdown-toggle" }) %>
   </div>
   <div class="field">
-    <%= f.label :date %><br>
-    <%= f.select :date, ['Breakfast', 'Lunch','Dinner'], {}, { :class => "btn btn-default dropdown-toggle" }%>
+    <%= f.label :mealtime %><br>
+    <%= f.select :mealtime, ['Breakfast', 'Lunch','Dinner'], {}, { :class => "btn btn-default dropdown-toggle" }%>
   </div>
   <div class="actions">
       <%= f.submit 'Submit', :class => 'btn btn-primary ' %>
