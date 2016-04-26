@@ -8,29 +8,52 @@
 <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 <h1>Nutrition Log</h1>
 
+<select id="chart_picker" class= 'btn btn-default'>
+  <option value="calories">Calories</option>
+  <option value="fat">Fat</option>
+  <option value="carbs">Carbs</option>
+</select>
+    <div id = "calories_div">
+    <h3 id="total_calories">Calories</h3>
+    <canvas id="calories_chart" width="350" height="138"></canvas>
+    </div>
+    <div id = "fat_div">
+    <h3 id = "total_fat" >Fat</h3>
+    <canvas id="fat_chart" width="350" height="138"></canvas>
+    </div>
+    <div id = "carb_div">
+    <h3 id = "total_carb">Carb</h3>
+    <canvas id="carb_chart" width="350" height="138"></canvas>
+    </div>
 <!--<div>-->
-<!--  <h1>Calories</h1>-->
-<!--  <canvas id="calories_chart" width="350" height="138"></canvas>-->
-<!--  <h1>Fat</h1>-->
-<!--  <canvas id="fat_chart" width="350" height="138"></canvas>-->
-<!--  <h1>Carb</h1>-->
-<!--  <canvas id="carb_chart" width="350" height="138"></canvas>-->
+<!--  <div style="float: left;">-->
+<!--    <p>Calories</p>-->
+<!--    <canvas id="calories_chart" width="350" height="138"></canvas>-->
+<!--  </div>-->
+<!--  <div style="float: left;">-->
+<!--    <p>Fat</p>-->
+<!--    <canvas id="fat_chart" width="350" height="138"></canvas>-->
+<!--  </div>-->
+<!--  <div style="float: left;">-->
+<!--    <p>Carb</p>-->
+<!--    <canvas id="carb_chart" width="350" height="138"></canvas>-->
+<!--  </div>-->
 <!--</div>-->
 <!--THIS IS A DEMO OF VERTICAL TABLE-->
-<table>
-  <tr>
-    <th>Calories</th>
-    <td><canvas id="calories_chart" width="350" height="138"></canvas></td>
-  </tr>
-    <tr>
-    <th>Fat</th>
-    <td><canvas id="fat_chart" width="350" height="138"></canvas></td>
-  </tr>
-    <tr>
-    <th>Carb</th>
-    <td><canvas id="carb_chart" width="350" height="138"></canvas></td>
-  </tr>
-</table>
+<!--<table>-->
+<!--  <tr>-->
+<!--    <th>Calories</th>-->
+<!--    <td><canvas id="calories_chart" width="350" height="138"></canvas></td>-->
+<!--  </tr>-->
+<!--    <tr>-->
+<!--    <th>Fat</th>-->
+<!--    <td><canvas id="fat_chart" width="350" height="138"></canvas></td>-->
+<!--  </tr>-->
+<!--    <tr>-->
+<!--    <th>Carb</th>-->
+<!--    <td><canvas id="carb_chart" width="350" height="138"></canvas></td>-->
+<!--  </tr>-->
+<!--</table>-->
 
 <!--THIS IS A DEMO OF HORIZONTAL TABLE FORM-->
 <!--<table>-->
