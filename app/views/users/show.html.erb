@@ -8,16 +8,31 @@
 <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 <h1>Nutrition Log</h1>
 
-<div>
-  <h1>Calories</h1>
-  <canvas id="calories_chart" width="350" height="138"></canvas>
-  <h1>Fat</h1>
-  <canvas id="fat_chart" width="350" height="138"></canvas>
-  <h1>Carb</h1>
-  <canvas id="carb_chart" width="350" height="138"></canvas>
-</div>
+<!--<div>-->
+<!--  <h1>Calories</h1>-->
+<!--  <canvas id="calories_chart" width="350" height="138"></canvas>-->
+<!--  <h1>Fat</h1>-->
+<!--  <canvas id="fat_chart" width="350" height="138"></canvas>-->
+<!--  <h1>Carb</h1>-->
+<!--  <canvas id="carb_chart" width="350" height="138"></canvas>-->
+<!--</div>-->
+<!--THIS IS A DEMO OF VERTICAL TABLE-->
+<table>
+  <tr>
+    <th>Calories</th>
+    <td><canvas id="calories_chart" width="350" height="138"></canvas></td>
+  </tr>
+    <tr>
+    <th>Fat</th>
+    <td><canvas id="fat_chart" width="350" height="138"></canvas></td>
+  </tr>
+    <tr>
+    <th>Carb</th>
+    <td><canvas id="carb_chart" width="350" height="138"></canvas></td>
+  </tr>
+</table>
 
-<!--THIS IS A DEMO OF TABLE FORM-->
+<!--THIS IS A DEMO OF HORIZONTAL TABLE FORM-->
 <!--<table>-->
 <!--  <thead>-->
 <!--    <tr>-->
