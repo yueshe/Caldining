@@ -19,7 +19,7 @@
       <th WIDTH="100">Protein</th>
       <th WIDTH="100">Sodium</th>
       <th WIDTH="100">Location</th>
-      <th WIDTH="100">date</th>
+      <th WIDTH="100">Meal</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -27,7 +27,7 @@
   <tbody>
     <% @user_items.group(:id).each do |item| %>
       <tr class= "food">
-        <td class = "servings"><%= @user_items.count(:id) %></td>
+        <td class = "servings"><%= @user_items.group(:id).count[item.id] %></td>
         <td class = "name"><%= link_to item.name, item %></td>
         <td class = "calories"><%= item.calories %></td>
         <td class = "fat"><%= item.fat %></td>
@@ -36,7 +36,7 @@
         <td class = "protein"><%= item.protein %></td>
         <td class = "sodium"><%= item.sodium %></td>
         <td class = "location"><%= item.location %></td>
-        <td class = "date"><%= item.date %></td>
+        <td class = "mealtime"><%= item.mealtime %></td>
       </tr>
     <% end %>
   </tbody>
