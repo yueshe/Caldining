@@ -1,11 +1,39 @@
 <%= javascript_include_tag('search.js') %>
 <%= javascript_include_tag('add_to_diet.js') %>
+<%= javascript_include_tag('draw.js') %>
+<%= javascript_include_tag('https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.0/Chart.js') %>
 <p id="notice"><%= notice %></p>
 <%= @user.email %>
 <br>
 <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 <h1>Nutrition Log</h1>
 
+<div>
+  <h1>Calories</h1>
+  <canvas id="calories_chart" width="350" height="138"></canvas>
+  <h1>Fat</h1>
+  <canvas id="fat_chart" width="350" height="138"></canvas>
+  <h1>Carb</h1>
+  <canvas id="carb_chart" width="350" height="138"></canvas>
+</div>
+
+<!--THIS IS A DEMO OF TABLE FORM-->
+<!--<table>-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th>Calories</th>-->
+<!--      <th>Fat</th>-->
+<!--      <th>Carb</th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--    <tr>-->
+<!--    <td><canvas id="calories_chart" width="350" height="138"></canvas></td>-->
+<!--    <td><canvas id="fat_chart" width="350" height="138"></canvas></td>-->
+<!--    <td><canvas id="carb_chart" width="350" height="138"></canvas></td>-->
+<!--    <tr>-->
+<!--  </tbody>-->
+<!--</table>-->
 <textarea id="search" name="search_box" cols="25" rows ="1" maxlength="50" placeholder="Search..."></textarea>
 <table>
   <thead>
