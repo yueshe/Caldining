@@ -72,10 +72,11 @@ class ItemsController < ApplicationController
   end
 
 
-  def add_to_log
+  def add_servings
     @user = User.find(current_user.id)
-    @item = Item.find(params[:id])
-    @user.items << @item
+    @item = params[:id]
+    @serving = Serving.find_or_create_by(item: @item, user: @user)
+    @serving.increment_by(:total, params[:serving_quantity])
     respond_to do |format|
       format.html { redirect_to item_path(@item), notice: "Item added to nutrition log" }
     end

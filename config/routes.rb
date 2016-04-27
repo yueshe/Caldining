@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :halls
   root :to => redirect('/halls')
   get 'users/:id' => 'users#show', as: 'show_profile'
-  get 'items/:id/add_to_log' => 'items#add_to_log', as: 'add_item_user'
+  get 'items/:id/add_servings' => 'items#add_servings', as: 'add_servings'
   mount Sidekiq::Web, at: "/sidekiq"
   
 

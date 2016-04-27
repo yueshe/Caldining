@@ -44,7 +44,7 @@
   <strong>date:</strong>
   <%= @item.date %>
 </p>
-<%= link_to "Add Item to Log", add_item_user_path %>
+<%= link_to "Add Item to Log", add_servings(:serving_quantity => 1) %>
 
 <br>
 <%= link_to 'Edit', edit_item_path(@item), :class => "btn btn-default" if current_user.admin %>
