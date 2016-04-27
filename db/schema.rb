@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427043825) do
+ActiveRecord::Schema.define(version: 20160427083139) do
 
   create_table "add_total_to_servings", force: :cascade do |t|
     t.integer  "total"
@@ -51,6 +51,17 @@ ActiveRecord::Schema.define(version: 20160427043825) do
 
   add_index "serving", ["item_id"], name: "index_serving_on_item_id"
   add_index "serving", ["user_id"], name: "index_serving_on_user_id"
+
+  create_table "servings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.integer  "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "servings", ["item_id"], name: "index_servings_on_item_id"
+  add_index "servings", ["user_id"], name: "index_servings_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

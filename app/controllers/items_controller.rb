@@ -64,9 +64,10 @@ class ItemsController < ApplicationController
   # DELETE /items/1.json
   def destroy
     self.auth_admin
+    @hall = @item.location
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to hall_path(session[:hall_id]), notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to hall_path(@hall), notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -75,8 +76,8 @@ class ItemsController < ApplicationController
   def add_servings
     @user = User.find(current_user.id)
     @item = params[:id]
-    @serving = Serving.find_or_create_by(item: @item, user: @user)
-    @serving.increment_by(:total, params[:serving_quantity])
+    @serving = Serving.find_or_create_by(item_id: @item, user_id: @user)
+    @serving.increment(:total, 1)
     respond_to do |format|
       format.html { redirect_to item_path(@item), notice: "Item added to nutrition log" }
     end

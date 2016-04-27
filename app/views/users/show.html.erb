@@ -25,9 +25,9 @@
   </thead>
   
   <tbody>
-    <% @user_items.group(:id).each do |item| %>
+    <% @user.items.each do |item| %>
       <tr class= "food">
-        <td class = "servings"><%= @user_items.count(:id) %></td>
+        <td class = "servings"><%= @user.items.count(:id) %></td>
         <td class = "name"><%= link_to item.name, item %></td>
         <td class = "calories"><%= item.calories %></td>
         <td class = "fat"><%= item.fat %></td>
