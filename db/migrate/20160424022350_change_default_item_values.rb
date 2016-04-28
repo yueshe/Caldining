@@ -6,6 +6,6 @@ class ChangeDefaultItemValues < ActiveRecord::Migration
     change_column_default :items, :cholesterol, 0.0
     change_column_default :items, :protein, 0.0
     change_column_default :items, :sodium, 0.0
-    change_column :items, :timeframe, :date
+    rename_column :items, :timeframe, :date
   end
 end
