@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :items
   resources :halls
-  root :to => redirect('/halls')
+  root :to => redirect('/items')
   get 'users/:id' => 'users#show', as: 'show_profile'
   get 'items/:id/add_servings' => 'items#add_servings', as: 'add_servings'
   get 'items/:id/remove_servings' => 'items#remove_servings', as: 'remove_servings'
