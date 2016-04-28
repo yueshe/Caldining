@@ -3,6 +3,13 @@
 <p id="notice"><%= notice %></p>
 <h1>Listing Items</h1>
 
+<% if current_user.admin %>
+  <%= link_to 'New Item', new_item_path, :class => "btn btn-default" %>
+  <br>
+<% end %>
+<%= link_to 'Show All Halls', halls_path, :class => "btn btn-default" %>
+<br>
+
 <textarea id="search" name="search_box" cols="25" rows ="1" maxlength="50" placeholder="Search..."></textarea>
 <table>
   <thead>
@@ -34,7 +41,7 @@
         <td class = "sodium"><%= item.sodium %></td>
         <td class = "location"><%= link_to item.location, Hall.find_by(name: item.location) %></td>
         <td class = "mealtime"><%= item.mealtime %></td>
-        <td class = "add"><p class = "btn btn-default ">Add to Diet</p></td>
+        <td class = "add"><%= link_to "Add Serving", add_servings_path(:serving_quantity => quantity, :id => item.id)%><p class = "btn btn-default ">Add Serving</p></td>
         <% if current_user.admin %>
           <td><%= link_to 'Edit', edit_item_path(item), :class => "btn btn-default"%></td>
           <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default"%></td>
@@ -43,9 +50,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-<% if current_user.admin %>
-  <%= link_to 'New Item', new_item_path, :class => "btn btn-default" %>
-<% end %>
-<%= link_to 'Show All Halls', halls_path, :class => "btn btn-default" %>

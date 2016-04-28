@@ -1,5 +1,8 @@
 %h1 Dining Hall: #{@hall.name}
-
+= link_to 'Show All Items', items_path,  :class => "btn btn-default"
+%br
+= link_to 'All Halls', halls_path,  :class => "btn btn-default"
+%br
 %table#halls
   %thead
     %h3 Menu Items:
@@ -12,4 +15,3 @@
     - if current_user.admin
       %td= link_to 'Add New Item', new_item_path,  :class => "btn btn-default"
 %br
-= link_to 'Back', halls_path,  :class => "btn btn-default"

@@ -37,6 +37,7 @@
         <td class = "sodium"><%= item.sodium %></td>
         <td class = "location"><%= item.location %></td>
         <td class = "mealtime"><%= item.mealtime %></td>
+        <td class = "remove_servings"><%= link_to "Remove Serving", remove_servings_path(:serving_quantity => 1, :id => item.id) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -80,7 +80,22 @@ class ItemsController < ApplicationController
     @serving.increment(:total)
     @serving.save
     respond_to do |format|
-      format.html { redirect_to item_path(@item), notice: "Item added to nutrition log" }
+      format.html { redirect_to :back, notice: "Serving added to log" }
+    end
+  end
+  
+  def remove_servings
+    @user = User.find(current_user.id)
+    @item = Item.find(params[:id])
+    @serving = Serving.find_or_create_by(item: @item, user: @user)
+    @serving.decrement(:total)
+    if @serving.total <= 0
+      @serving.delete
+    else
+      @serving.save
+    end
+    respond_to do |format|
+      format.html { redirect_to :back, notice: "Serving added to log" }
     end
   end
     
