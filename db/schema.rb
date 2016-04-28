@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160428225308) do
 
-<<<<<<< HEAD
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -37,29 +36,11 @@ ActiveRecord::Schema.define(version: 20160428225308) do
     t.datetime "updated_at", null: false
   end
 
-=======
->>>>>>> dab05acd2a081f54ef613306b9e4d7d288e112e2
   create_table "halls", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "intakes", force: :cascade do |t|
-    t.datetime "date"
-    t.string   "meal"
-    t.decimal  "calories"
-    t.decimal  "fat"
-    t.decimal  "carb"
-    t.decimal  "cholesterol"
-    t.decimal  "protein"
-    t.decimal  "sodium"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "user_id"
-  end
-
-  add_index "intakes", ["user_id"], name: "index_intakes_on_user_id"
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
