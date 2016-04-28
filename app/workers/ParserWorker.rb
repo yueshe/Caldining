@@ -1,3 +1,4 @@
+#adapted from https://github.com/veersuvrat/CalDining-169/blob/master/app/workers/parser_worker.rb
 require 'rubygems'
 require 'open-uri'
 require 'nokogiri'
@@ -5,9 +6,10 @@ require 'sidekiq'
 
 class ParserWorker
   include Sidekiq::Worker
-  #recurrence backfill: true do
-    #daily.hour_of_day(7)
-  #end
+  include Sidetiq::Schedulable
+  recurrence backfill: true do
+    daily.hour_of_day(7)
+  end
   
   def perform
     @base_url = "http://services.housing.berkeley.edu/FoodPro/dining/static/"

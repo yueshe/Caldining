@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160427083139) do
 
+<<<<<<< HEAD
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -36,6 +37,8 @@ ActiveRecord::Schema.define(version: 20160427083139) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> dab05acd2a081f54ef613306b9e4d7d288e112e2
   create_table "halls", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false

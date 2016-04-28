@@ -27,6 +27,7 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'autoprefixer-rails'
 # for parsing the database
 gem 'sidekiq'
+gem 'sidetiq'
 gem 'sinatra', require: false
 gem 'nokogiri'
 # Use ActiveModel has_secure_password
