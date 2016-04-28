@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160427083139) do
+ActiveRecord::Schema.define(version: 20160428225308) do
 
   create_table "halls", force: :cascade do |t|
     t.string   "name"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160427083139) do
     t.decimal  "protein",             default: 0.0
     t.decimal  "sodium",              default: 0.0
     t.string   "location"
-    t.date     "timeframe"
+    t.date     "date"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.boolean  "nutrition_available", default: false
