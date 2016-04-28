@@ -11,11 +11,11 @@
         <h5 id ="greet_message">Welcome User</h5>
         
         <h5 id= "logout"><%= link_to 'Log out', destroy_user_session_path(current_user.id) %></h5>
-        <%= link_to 'User Profile', show_profile_path(current_user.id), :id => "profile_link" %>
+        <h5 id = "profile_link"><%= link_to 'User Profile', show_profile_path(current_user.id)%></h5>
     
     <% else %>
         <%= link_to "Sign up", new_registration_path(User), :id => "greet_message" %>
-        <%= link_to "Sign in", new_user_session_path(User), :id => "profile_link" %>
+        <%= link_to "Sign in", new_user_session_path, :id => "profile_link" %>
     <% end %>
 </div>
 <br>
