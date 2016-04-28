@@ -14,8 +14,8 @@
         <%= link_to 'User Profile', show_profile_path(current_user.id), :id => "profile_link" %>
     
     <% else %>
-        <%= link_to "Sign up", new_registration_path(User), :id => "greet_message" %>
-        <%= link_to "Sign in", new_user_session_path(User), :id => "profile_link" %>
+        <%= link_to "Sign up", new_user_registration_path, :id => "greet_message" %>
+        <%= link_to "Log in", new_session_path(User), :id => "profile_link" %>
     <% end %>
 </div>
 <br>
