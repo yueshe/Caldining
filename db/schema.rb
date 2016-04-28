@@ -42,6 +42,22 @@ ActiveRecord::Schema.define(version: 20160428225308) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "intakes", force: :cascade do |t|
+    t.datetime "date"
+    t.string   "meal"
+    t.decimal  "calories"
+    t.decimal  "fat"
+    t.decimal  "carb"
+    t.decimal  "cholesterol"
+    t.decimal  "protein"
+    t.decimal  "sodium"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+  end
+
+  add_index "intakes", ["user_id"], name: "index_intakes_on_user_id"
+
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.decimal  "calories"
