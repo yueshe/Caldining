@@ -6,9 +6,7 @@ var fat_list;
 var carb_list;
 
 $(document).ready(draw)
-$(document).ready(show)
-
-var draw = function() {
+var draw =  function() {
     //Data intiation
     food_list = []
     calories_list = []
@@ -24,15 +22,14 @@ var draw = function() {
      color_list.push('#'+Math.floor(Math.random()*16777215).toString(16));
     });
     //Initial set up
-    chart("#calories_chart", food_list, calories_list, color_list)
-    chart("#fat_chart", food_list, fat_list, color_list)
-    chart("#carb_chart", food_list, carb_list, color_list)
-
+    curr_chart = chart("#calories_chart", food_list, calories_list, color_list)
+    
     $("#fat_div").hide()
     $("#carb_div").hide()
     $("#total_calories").text("Total Calories: " + calories_list.reduce(add, 0) + "KCal");
     $("#total_fat").text("Total Fat: " + fat_list.reduce(add, 0) + "g");
     $("#total_carb").text("Total Carbs: " + carb_list.reduce(add, 0) + "g");
+    show()
   }
 
 
@@ -56,16 +53,20 @@ var chart = function(canvas, name, data, color) {
 var show = function() {
     $("#chart_picker").change(function() {
         var chart_type = $("#chart_picker").val()
+        curr_chart.clear();
         if (chart_type == "calories") {
             $("#calories_div").fadeIn()
+           curr_chart = chart("#calories_chart", food_list, fat_list, color_list)
             $("#fat_div").hide()
             $("#carb_div").hide()
         }   else if (chart_type == "fat") {
             $("#fat_div").fadeIn()
+            curr_chart = chart("#fat_chart", food_list, fat_list, color_list)
             $("#calories_div").hide()
             $("#carb_div").hide()
         } else if (chart_type == "carbs") {
             $("#carb_div").fadeIn()
+            curr_chart= chart("#carb_chart", food_list, fat_list, color_list)
             $("#calories_div").hide()
             $("#fat_div").hide()
         }
