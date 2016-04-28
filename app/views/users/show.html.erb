@@ -27,7 +27,7 @@
   <tbody>
     <% @user.items.each do |item| %>
       <tr class= "food">
-        <td class = "servings"><%= @user_items.group(:id).count[item.id] %></td>
+        <td class = "servings"><%= Serving.find_by(item: item.id).total %></td>
         <td class = "name"><%= link_to item.name, item %></td>
         <td class = "calories"><%= item.calories %></td>
         <td class = "fat"><%= item.fat %></td>

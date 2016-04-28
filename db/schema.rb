@@ -19,10 +19,6 @@ ActiveRecord::Schema.define(version: 20160427083139) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-
-
   create_table "halls", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -38,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160427083139) do
     t.decimal  "protein",             default: 0.0
     t.decimal  "sodium",              default: 0.0
     t.string   "location"
-    t.date     "timeframe"
+    t.string   "date"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.boolean  "nutrition_available", default: false
