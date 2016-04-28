@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-%div{:id=>"logo"}
-  %img=image_tag("caldining.jpg")
-%div{:id=>"greet_bar"}
-  -if current_user.admin
-    %h5{:id=>"greet_message"} Welcome Admin 
-  -else
-    %h5{:id=>"greet_message"} Welcome User 
-  %h5{:id=>"profile_link"}= link_to 'User Profile', show_profile_path(current_user.id)
-=======
-%h1 All Halls
->>>>>>> 56313093b0ab4a9327dcf7a98c6d5de7d503a7a8
 %table#halls
   %thead
     %tr

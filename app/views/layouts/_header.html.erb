@@ -1,13 +1,23 @@
-<% if current_user %>
+<div id="logo">
+    <%=link_to image_tag("caldining.jpg"), root_path%>
+</div>
+<div id="greet_bar">
     <% if current_user && current_user.admin %>
-        <h5>Welcome Admin</h5>
+        <h5 id ="greet_message"> Welcome Admin</h5>
+        
+        <h5 id= "logout"><%= link_to 'Log out', destroy_user_session_path(current_user.id) %></h5>
+        <h5 id="profile_link"><%= link_to 'User Profile', show_profile_path(current_user.id) %></h5>
+    <% elsif current_user %>
+        <h5 id ="greet_message">Welcome User</h5>
+        
+        <h5 id= "logout"><%= link_to 'Log out', destroy_user_session_path(current_user.id) %></h5>
+        <%= link_to 'User Profile', show_profile_path(current_user.id), :id => "profile_link" %>
+    
     <% else %>
-        <h5>Welcome User</h5> 
-        <%= link_to 'User Profile', show_profile_path(current_user.id) %><br>
+        <%= link_to "Sign up", new_registration_path(User), :id => "greet_message" %>
+        <%= link_to "Sign in", new_user_session_path(User), :id => "profile_link" %>
     <% end %>
-    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %><br>
-<% else %>
-    <%= link_to 'Log In', new_session_path(User) %>
-    <br>
-    <%= link_to "Sign up", new_registration_path(User) %>
-<% end %>
+</div>
+<br>
+<br>
+<br>

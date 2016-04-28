@@ -108,8 +108,14 @@ textarea {
 }
 #greet_message{
     float:left;
-    margin-right: 10px
+    margin-right: 20px
 }
+
+#logout{
+  float:right;
+}
+
 #profile_link{
     float:right;
+  margin-right: 20px
 }
