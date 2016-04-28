@@ -5,8 +5,10 @@ var color_list;
 var fat_list;
 var carb_list;
 
-var draw = {
-  setup: function() {
+$(document).ready(draw)
+$(document).ready(show)
+
+var draw = function() {
     //Data intiation
     food_list = []
     calories_list = []
@@ -32,8 +34,6 @@ var draw = {
     $("#total_fat").text("Total Fat: " + fat_list.reduce(add, 0) + "g");
     $("#total_carb").text("Total Carbs: " + carb_list.reduce(add, 0) + "g");
   }
-};
-$(draw.setup);
 
 
 var chart = function(canvas, name, data, color) {
@@ -53,8 +53,7 @@ var chart = function(canvas, name, data, color) {
     return chart
 }
 
-var show = {
-  setup: function() {
+var show = function() {
     $("#chart_picker").change(function() {
         var chart_type = $("#chart_picker").val()
         if (chart_type == "calories") {
@@ -73,8 +72,6 @@ var show = {
     });
     
   }
-};
-$(show.setup);
 
 function add(a, b) {
     return a + b;

@@ -1,5 +1,5 @@
-var Search = {
-  setup: function() {
+$(document).ready(Search)
+var Search = function(){
     $("#search").keydown(function(e){
     if (e.keyCode == 13)
     {
@@ -21,7 +21,4 @@ var Search = {
         }
       });
     });
-  }
-};
-$(Search.setup);
-
+}

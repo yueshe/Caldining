@@ -99,3 +99,17 @@ textarea {
   resize: none;
   background: #F2F9FC;
 }
+
+#logo{
+    float: left;
+}
+#greet_bar{
+    float:right;
+}
+#greet_message{
+    float:left;
+    margin-right: 10px
+}
+#profile_link{
+    float:right;
+}
