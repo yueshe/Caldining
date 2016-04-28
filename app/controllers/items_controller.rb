@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
-
+  skip_before_action :authenticate_user!, only: [:show]
 
   def item_params
     params.require(:name, :location, :mealtime).permit(:calories, :fat, :cholesterol, :protein, :sodium, :date, :calories_from_fat, :nutrition_available)
@@ -17,6 +16,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @item = Item.find(params[:id])
   end
 
   # GET /items/new
@@ -64,20 +64,38 @@ class ItemsController < ApplicationController
   # DELETE /items/1.json
   def destroy
     self.auth_admin
+    @hall = @item.location
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to hall_path(session[:hall_id]), notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to hall_path(@hall), notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
 
-  def add_to_log
+  def add_servings
     @user = User.find(current_user.id)
     @item = Item.find(params[:id])
-    @user.items << @item
+    @serving = Serving.find_or_create_by(item: @item, user: @user)
+    @serving.increment(:total)
+    @serving.save
     respond_to do |format|
-      format.html { redirect_to item_path(@item), notice: "Item added to nutrition log" }
+      format.html { redirect_to :back, notice: "Serving added to log" }
+    end
+  end
+  
+  def remove_servings
+    @user = User.find(current_user.id)
+    @item = Item.find(params[:id])
+    @serving = Serving.find_or_create_by(item: @item, user: @user)
+    @serving.decrement(:total)
+    if @serving.total <= 0
+      @serving.delete
+    else
+      @serving.save
+    end
+    respond_to do |format|
+      format.html { redirect_to :back, notice: "Serving added to log" }
     end
   end
     

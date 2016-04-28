@@ -1,5 +1,15 @@
+<<<<<<< HEAD
 %img= image_tag "#{@hall.name}_logo.jpg"
 
+=======
+%h1 Dining Hall: #{@hall.name}
+= link_to 'Show All Items', items_path,  :class => "btn btn-default"
+%br
+- if current_user && current_user.admin
+  %td= link_to 'Add New Item', new_item_path,  :class => "btn btn-default"
+  = link_to 'All Halls', halls_path,  :class => "btn btn-default"
+%br
+>>>>>>> 56313093b0ab4a9327dcf7a98c6d5de7d503a7a8
 %table#halls
   %thead
     %h3 Menu Items:
@@ -9,7 +19,4 @@
       %tr
         %td= link_to item.name, item_path(item)
         %td= link_to 'More nutrition info', item_path(item),  :class => "btn btn-default"
-    - if current_user.admin
-      %td= link_to 'Add New Item', new_item_path,  :class => "btn btn-default"
 %br
-= link_to 'Back', halls_path,  :class => "btn btn-default"

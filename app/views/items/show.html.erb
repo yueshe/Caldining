@@ -41,11 +41,13 @@
 </p>
 
 <p>
-  <strong>mealtime:</strong>
+  <strong>Mealtime:</strong>
   <%= @item.mealtime %>
 </p>
-<%= link_to "Add Item to Log", add_item_user_path %>
+<% if current_user %>
+  <%= link_to "Add Serving to Log", add_servings_path(:serving_quantity => 1) %> <br>
+<% end %>
 
-<br>
-<%= link_to 'Edit', edit_item_path(@item), :class => "btn btn-default" if current_user.admin %>
-<%= link_to 'Back', hall_path(id: (Hall.find_by name: @item.location).id),:class => "btn btn-default" %>
+<%= link_to 'Edit', edit_item_path(@item), :class => "btn btn-default" if current_user && current_user.admin %> <br>
+<%= link_to 'Back', hall_path(id: (Hall.find_by name: @item.location).id),:class => "btn btn-default" %> <br>
+<%= link_to 'All Items', items_path,:class => "btn btn-default" %>

@@ -1,0 +1,13 @@
+<% if current_user %>
+    <% if current_user && current_user.admin %>
+        <h5>Welcome Admin</h5>
+    <% else %>
+        <h5>Welcome User</h5> 
+        <%= link_to 'User Profile', show_profile_path(current_user.id) %><br>
+    <% end %>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %><br>
+<% else %>
+    <%= link_to 'Log In', new_session_path(User) %>
+    <br>
+    <%= link_to "Sign up", new_registration_path(User) %>
+<% end %>
