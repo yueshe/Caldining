@@ -11,9 +11,9 @@ var Search = {
       $("tr.food").each(function() {
         var target = $('#search').val().replace(/ /g,'').toLowerCase()
         var food_name = $("td.name", this).text().replace(/ /g,'').toLowerCase()
-        var food_date = $("td.mealtime", this).html().replace(/ /g,'').toLowerCase()
+        var food_mealtime = $("td.mealtime", this).html().replace(/ /g,'').toLowerCase()
         var food_location = $("td.location", this).text().replace(/ /g,'').toLowerCase()
-        if (food_name.includes(target) || food_location == target || food_date == target) {
+        if (food_name.includes(target) || food_location == target || food_mealtime == target) {
           $(this).show()
         } else {
           console.log("hiding")
