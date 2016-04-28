@@ -5,7 +5,9 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= render 'layouts/header' %>
+  <% if !(current_page?(new_session_path(User)) || current_page?(new_registration_path(User))) %>
+    <%= render 'layouts/header' %>
+  <% end %>
 </head>
 <body>
 

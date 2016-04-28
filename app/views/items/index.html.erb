@@ -3,7 +3,7 @@
 <p id="notice"><%= notice %></p>
 <h1>Listing Items</h1>
 
-<% if current_user.admin %>
+<% if current_user && current_user.admin %>
   <%= link_to 'New Item', new_item_path, :class => "btn btn-default" %>
   <br>
 <% end %>
@@ -41,10 +41,12 @@
         <td class = "sodium"><%= item.sodium %></td>
         <td class = "location"><%= link_to item.location, Hall.find_by(name: item.location) %></td>
         <td class = "mealtime"><%= item.mealtime %></td>
-        <td class = "add"><%= link_to "Add Serving", add_servings_path(:serving_quantity => :amount, :id => item.id), :class => "btn btn-default"%></td>
-        <% if current_user.admin %>
-          <td><%= link_to 'Edit', edit_item_path(item), :class => "btn btn-default"%></td>
-          <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default"%></td>
+        <% if current_user %>
+          <td class = "add"><%= link_to "Add Serving", add_servings_path(:serving_quantity => :amount, :id => item.id), :class => "btn btn-default"%></td>
+          <% if current_user.admin %>
+            <td><%= link_to 'Edit', edit_item_path(item), :class => "btn btn-default"%></td>
+            <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default"%></td>
+          <% end %>
         <% end %>
       </tr>
     <% end %>

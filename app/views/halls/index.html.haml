@@ -7,11 +7,11 @@
       %tr
         %td= hall.name 
         %td= link_to "See menu for #{hall.name}", hall ,:class => "btn btn-default"
-        -if current_user.admin
+        -if current_user && current_user.admin
           %td= link_to 'Edit', edit_hall_path(hall)
           %td= link_to 'Destroy', hall, method: :delete, data: { confirm: 'Are you sure?' }
         
 %br
--if current_user.admin
+-if current_user && current_user.admin
   %td= link_to 'New Hall', new_hall_path, :class => "btn btn-default"
 %td= link_to 'Show All Items', items_path, :class => "btn btn-default"
