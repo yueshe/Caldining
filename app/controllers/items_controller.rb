@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:show]
-
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:show]
 
   def item_params
     params.require(:name, :location, :mealtime).permit(:calories, :fat, :cholesterol, :protein, :sodium, :date, :calories_from_fat, :nutrition_available)
@@ -17,6 +16,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @item = Item.find(params[:id])
   end
 
   # GET /items/new
