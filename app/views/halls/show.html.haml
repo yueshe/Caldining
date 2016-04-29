@@ -1,6 +1,5 @@
-%h1 Dining Hall: #{@hall.name}
 %img= image_tag "#{@hall.name}_logo.jpg"
-
+%br
 = link_to 'Show All Items', items_path,  :class => "btn btn-default"
 %br
 - if current_user && current_user.admin
