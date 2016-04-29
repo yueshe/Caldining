@@ -221,6 +221,7 @@ GEM
       ast (~> 2.2)
     pg (0.18.4)
     procto (0.0.3)
+    puma (3.4.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -386,6 +387,7 @@ DEPENDENCIES
   metric_fu
   nokogiri
   pg
+  puma
   rails (= 4.2.5)
   rails_12factor
   rspec-rails (= 2.14)
