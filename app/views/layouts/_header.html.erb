@@ -3,7 +3,6 @@
     <%=link_to image_tag("caldining.jpg"), root_path%>
 </div>
 <div id="greet_bar">
-
   <% if !(current_page?(new_session_path(User)) || current_page?(new_registration_path(User))) %>
     <% if current_user %>
         <% if current_user.admin %>
@@ -12,6 +11,7 @@
             <h5 id ="greet_message">Welcome User</h5>
         <% end %>
         <h5 id= "logout"><%= link_to 'Log out', destroy_user_session_path, :method => :delete  %></h5>
+        <h5 id="profile_link"><%= link_to 'User Profile', show_profile_path(current_user.id) %></h5>
     <% else %>
         <h5 id = "greet_message"><%= link_to "Sign up", new_user_registration_path, :id => "greet_message" %></h5>
         <h5 id = "profile_link"><%= link_to "Log in", new_session_path(User), :id => "profile_link" %></h5>
