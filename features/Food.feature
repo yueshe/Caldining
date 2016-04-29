@@ -9,5 +9,6 @@ Background:
     
 Scenario: food
     Given I am on the homepage
-    When I click on "Crossroads"
-    Then I should see "French Fries"
+    Then I should see "See menu for Crossroads"
+    When I follow "See menu for Crossroads"
+    Then I should see "Menu Items"

@@ -64,10 +64,10 @@ class ItemsController < ApplicationController
   # DELETE /items/1.json
   def destroy
     self.auth_admin
-    @hall = @item.location
+    @hall = Hall.where(name: @item.location)
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to hall_path(@hall), notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to halls_path(@hall), notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

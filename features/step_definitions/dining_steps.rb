@@ -4,7 +4,7 @@ Given /^I am logged in$/ do
   fill_in 'Email', :with => 'aaaaaa@gmail.com'
   fill_in 'Password', :with => 'aaaaaaaa'
   fill_in 'Password confirmation', :with => 'aaaaaaaa'
-  click_button 'Sign up'
+  click_button("Sign up")
 end
 
 Given /the database is setup/ do
@@ -26,7 +26,8 @@ Given /the database is setup/ do
         :protein => 0,
         :sodium => 100,
         :location => "Crossroads",
-        :date => "Tomorrow"
+        :date => Date.current,
+        :mealtime => "Breakfast"
         )
 end  
 

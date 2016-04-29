@@ -9,7 +9,7 @@ Background:
 
 Scenario: different restaurant on the homepage
     Given I am on the homepage
-    When I click on "Crossroads"
+    When I follow "Crossroads"
     Then I should see "French Fries"
     When I follow "French Fries"
     Then I should not see "Edit"
