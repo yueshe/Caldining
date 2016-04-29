@@ -6,6 +6,7 @@ Feature: Food
 Background:
     Given the database is setup
     Given I am logged in
+    Given I am the admin
     
 Scenario: food
     Given I am on the homepage

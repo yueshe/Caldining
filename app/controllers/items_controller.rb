@@ -32,17 +32,16 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    if self.auth_admin
-      return 
-    end
-    @item = Item.new(item_params)
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to item_path(@item), notice: 'Item was successfully created.' }
-        format.json { render :show, status: :created, location: @item }
-      else
-        format.html { render :new }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+    if !self.auth_admin
+      @item = Item.new(item_params)
+      respond_to do |format|
+        if @item.save
+          format.html { redirect_to item_path(@item), notice: 'Item was successfully created.' }
+          format.json { render :show, status: :created, location: @item }
+        else
+          format.html { render :new }
+          format.json { render json: @item.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -50,13 +49,12 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
-    if self.auth_admin
-      return 
-    end
-    respond_to do |format|
-      @item.update(item_params)
-      format.html { redirect_to item_path(@item), notice: 'Item was successfully updated.' }
-      format.json { render :show, status: :ok, location: @item }
+    if !self.auth_admin
+      respond_to do |format|
+        @item.update(item_params)
+        format.html { redirect_to item_path(@item), notice: 'Item was successfully updated.' }
+        format.json { render :show, status: :ok, location: @item } 
+      end
     end
   end
 
