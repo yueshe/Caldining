@@ -102,13 +102,16 @@ textarea {
 
 #logo{
     float: left;
+    margin-left: 10%
 }
 #greet_bar{
     float:right;
+    margin-right: 5%;
+    
 }
 #greet_message{
     float:left;
-    margin-right: 20px
+    margin-right: 20px;
 }
 
 #logout{
@@ -116,6 +119,19 @@ textarea {
 }
 
 #profile_link{
-    float:right;
+  float:right;
   margin-right: 20px
+}
+#header {
+  top:0;
+  overflow: auto;
+  width: 100%;  
+  background-color: #604c34;
+  
+}
+#header h5{
+  color: #FFFFFF;
+}
+#header a{
+  color: #FFFFFF;  
 }
