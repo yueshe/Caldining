@@ -4,5 +4,4 @@ class UsersController < ApplicationController
       @user = User.find(current_user.id)
       @user_items = @user.items
     end
-      
 end
