@@ -1,4 +1,5 @@
 require 'sidekiq/web'
+require 'sidetiq/web'
 
 Rails.application.routes.draw do
   devise_for :users
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   get 'items/:id/add_servings' => 'items#add_servings', as: 'add_servings'
   get 'items/:id/edit_servings' => 'items#edit_servings', as: 'edit_servings'
   mount Sidekiq::Web, at: "/sidekiq"
+  
   
 
   # The priority is based upon order of creation: first created -> highest priority.
