@@ -5,7 +5,11 @@ class HallsController < ApplicationController
   # GET /halls
   # GET /halls.json
   def index
-    @halls = Hall.all
+    if current_user.admin
+      @halls = Hall.all
+    else
+      redirect_to items_path
+    end
   end
 
   # GET /halls/1
