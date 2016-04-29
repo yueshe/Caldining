@@ -69,6 +69,7 @@
 <!--</table>-->
 <% if current_user.admin %>
   <%= link_to "Show All Halls", halls_path, :class => "btn btn-default" %>
+  <br>
 <% end %>
 
 <textarea id="search" name="search_box" cols="25" rows ="1" maxlength="50" placeholder="Search..."></textarea>
@@ -102,8 +103,10 @@
         <td class = "sodium"><%= item.sodium %></td>
         <td class = "location"><%= item.location %></td>
         <td class = "mealtime"><%= item.mealtime %></td>
-        <td class = "add_servings"><%= link_to "Add Serving", add_servings_path(:serving_quantity => 1, :id => item.id) %></td>
-        <td class = "remove_servings"><%= link_to "Remove Serving", remove_servings_path(:serving_quantity => 1, :id => item.id) %></td>
+        <%= form_tag edit_servings_path(:id => item.id), :method => :get do %>
+            <td><%= text_field_tag(:serving_quantity,nil , {placeholder: "0.." ,maxlength: 5, size: 20, class: "Quantity",size: 5, id: "#{item.name}_quantity"}) %></td>
+            <td><input type="submit" value = "Edit Serving" class = "btn btn-default"/></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -1,0 +1,1 @@
+var Add_to_diet={setup:function(){$(".add").click(function(t){var a=parseInt($(".quantity",this.parentNode).val());console.log(a);$(".name",this.parentNode).val();return a>=1?void t.stopImmediatePropagation():(alert("Please enter an valid amount"),void t.stopImmediatePropagation())})}};$(Add_to_diet.setup);
