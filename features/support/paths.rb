@@ -27,8 +27,7 @@ module NavigationHelpers
       item_path(item)
 
     when /^the user page$/
-      visit path_to("the homepage")
-      click_on("User Profile")
+      '/users/1'
     
     else
       begin
