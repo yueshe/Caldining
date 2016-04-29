@@ -92,7 +92,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @serving.total <= 0
         @serving.delete
-        format.html { redirect_to :back, notice: "Removed #{@item} from log" }
+        format.html { redirect_to :back, notice: "Removed #{@item.name} from log" }
       else
         @serving.save
         format.html { redirect_to :back, notice: "Changed to #{params[:serving_quantity].to_i} Serving(s)" }
