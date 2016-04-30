@@ -77,27 +77,30 @@ class ItemsController < ApplicationController
     @user = User.find(current_user.id)
     @item = Item.find(params[:id])
     @serving = Serving.find_or_create_by(item: @item, user: @user)
-    @serving.increment(:total)
+    @serving.increment(:total, params[:serving_quantity].to_i)
     @serving.save
     respond_to do |format|
-      format.html { redirect_to :back, notice: "Serving added to log" }
+      format.html { redirect_to :back, notice: "#{params[:serving_quantity].to_i} Serving(s) added to log" }
     end
   end
   
-  def remove_servings
+  def edit_servings
     @user = User.find(current_user.id)
     @item = Item.find(params[:id])
     @serving = Serving.find_or_create_by(item: @item, user: @user)
-    @serving.decrement(:total)
-    if @serving.total <= 0
-      @serving.delete
-    else
-      @serving.save
-    end
+    @serving.update_attribute :total, params[:serving_quantity].to_i
     respond_to do |format|
-      format.html { redirect_to :back, notice: "Serving added to log" }
+      if @serving.total <= 0
+        @serving.delete
+        format.html { redirect_to :back, notice: "Removed #{@item.name} from log" }
+      else
+        @serving.save
+        format.html { redirect_to :back, notice: "Changed to #{params[:serving_quantity].to_i} Serving(s)" }
+      end
     end
   end
+  
+  
     
   def auth_admin
     return false
