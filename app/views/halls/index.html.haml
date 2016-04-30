@@ -4,7 +4,7 @@
   %tbody
     - @halls.each do |hall|
       %tr
-        %td= image_tag "#{hall.name}_logo.jpg"
+
         %td= link_to "See menu for #{hall.name}", hall ,:class => "btn btn-default"
         -if current_user && current_user.admin
           %td= link_to 'Edit', edit_hall_path(hall)

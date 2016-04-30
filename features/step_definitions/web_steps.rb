@@ -18,7 +18,7 @@
 # * http://elabs.se/blog/15-you-re-cuking-it-wrong
 #
 
-  
+
 require 'uri'
 require 'cgi'
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
@@ -31,8 +31,7 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
-# Single-line step scope
-
+# Single-line step scoper
 When /^(.*) within (.*[^:])$/ do |step, parent|
   with_scope(parent) { When step }
 end
@@ -55,11 +54,7 @@ When /^(?:|I )press "([^"]*)"$/ do |button|
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
-  first(:link, link).click
-end
-
-When /^(?:|I )click on "([^"]*)"$/ do |link|
-  click_on(link)
+  click_link(link, :match => :first)
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
@@ -102,7 +97,6 @@ end
 When /^(?:|I )choose "([^"]*)"$/ do |field|
   choose(field)
 end
-
 
 When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
   attach_file(field, File.expand_path(path))

@@ -6,6 +6,7 @@ Feature: Home page
 Background:
     Given the database is setup
     Given I am logged in
+    Given I am the admin
     
 Scenario: different restaurant on the homepage
     Given I am on the homepage
