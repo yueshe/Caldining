@@ -87,13 +87,14 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @serving = Serving.find_or_create_by(item: @item, user: @user)
     @serving.update_attribute :total, params[:serving_quantity].to_i
-    if @serving.total <= 0
-      @serving.delete
-    else
-      @serving.save
-    end
     respond_to do |format|
-      format.html { redirect_to :back, notice: "Changed to #{params[:serving_quantity].to_i} Serving(s)" }
+      if @serving.total <= 0
+        @serving.delete
+        format.html { redirect_to :back, notice: "Removed #{@item.name} from log" }
+      else
+        @serving.save
+        format.html { redirect_to :back, notice: "Changed to #{params[:serving_quantity].to_i} Serving(s)" }
+      end
     end
   end
   
