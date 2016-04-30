@@ -9,7 +9,7 @@ Background:
     
 Scenario: menu
     Given I am on the homepage
-    When I click on "Crossroads"
+    When I follow "Crossroads"
     Then I should see "Menu Items"
 
     

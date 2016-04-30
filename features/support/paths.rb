@@ -14,7 +14,7 @@ module NavigationHelpers
     case page_name
 
     when /^the home\s?page$/
-      '/'
+      '/halls'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
@@ -27,8 +27,7 @@ module NavigationHelpers
       item_path(item)
 
     when /^the user page$/
-      visit path_to("the homepage")
-      click_on("User Profile")
+      '/users/1'
     
     else
       begin

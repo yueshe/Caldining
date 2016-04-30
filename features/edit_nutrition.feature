@@ -10,11 +10,11 @@ Background:
     
 Scenario: edit calories
     Given I am on the homepage
-    When I click on "Crossroads"
+    When I follow "Crossroads"
     Then I should see "French Fries"
-    When I click on "French Fries"
+    When I follow "French Fries"
     Then I should see "Edit"
-    When I click on "Edit"
+    When I follow "Edit"
     Then I should see "Editing Item"
     When I fill in "1000" for "Calories"
     And I press "Submit"
@@ -22,7 +22,7 @@ Scenario: edit calories
     
 Scenario: new food
     Given I am on the homepage
-    When I click on "Crossroads"
+    When I follow "Crossroads"
     When I follow "Add New Item"
     When I fill in "French Fries" for "Name"
     And I select "Crossroads" from "Location"

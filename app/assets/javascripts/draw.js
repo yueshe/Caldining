@@ -16,7 +16,8 @@ var draw =  function() {
     //Data retreival
     $("tr.food").each(function() {
      food_list.push($("td.name", this).text())
-     calories_list.push(parseFloat($("td.calories", this).html()) * parseFloat($("td.servings", this).html()))
+     var addition = parseFloat($("td.calories", this).html()) * parseFloat($("td.servings", this).html()) || 0;
+     calories_list.push(addition);
      carb_list.push(parseFloat($("td.carbs", this).html()) * parseFloat($("td.servings", this).html()))
      fat_list.push(parseFloat($("td.fat", this).html()) * parseFloat($("td.servings", this).html()))
      color_list.push('#'+Math.floor(Math.random()*16777215).toString(16));

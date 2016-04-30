@@ -6,8 +6,10 @@ Feature: Food
 Background:
     Given the database is setup
     Given I am logged in
+    Given I am the admin
     
 Scenario: food
     Given I am on the homepage
-    When I click on "Crossroads"
-    Then I should see "French Fries"
+    Then I should see "See menu for Crossroads"
+    When I follow "See menu for Crossroads"
+    Then I should see "Menu Items"

@@ -20,10 +20,9 @@ class HallsController < ApplicationController
 
   # GET /halls/new
   def new
-    if self.auth_admin
-      return 
+    if !self.auth_admin
+      @hall = Hall.new
     end
-    @hall = Hall.new
   end
 
   # GET /halls/1/edit
@@ -36,41 +35,37 @@ class HallsController < ApplicationController
   # POST /halls
   # POST /halls.json
   def create
-    if self.auth_admin
-      return 
-    end
-    @hall = Hall.new(hall_params)
-    
-    respond_to do |format|
-      @hall.save
-      format.html { redirect_to @hall, notice: 'Hall was successfully created.' }
-      format.json { render :show, status: :created, location: @hall }
+    if !self.auth_admin
+      @hall = Hall.new(hall_params)
+      respond_to do |format|
+        @hall.save
+        format.html { redirect_to @hall, notice: 'Hall was successfully created.' }
+        format.json { render :show, status: :created, location: @hall }
+      end 
     end
   end
 
   # PATCH/PUT /halls/1
   # PATCH/PUT /halls/1.json
   def update
-    if self.auth_admin
-      return 
-    end
-    respond_to do |format|
-      @hall.update(hall_params)
-      format.html { redirect_to @hall, notice: 'Hall was successfully updated.' }
-      format.json { render :show, status: :ok, location: @hall }
+    if !self.auth_admin
+      respond_to do |format|
+        @hall.update(hall_params)
+        format.html { redirect_to @hall, notice: 'Hall was successfully updated.' }
+        format.json { render :show, status: :ok, location: @hall }
+      end 
     end
   end
 
   # DELETE /halls/1
   # DELETE /halls/1.json
   def destroy
-    if self.auth_admin
-      return 
-    end
-    @hall.destroy
-    respond_to do |format|
-      format.html { redirect_to halls_url, notice: 'Hall was successfully destroyed.' }
-      format.json { head :no_content }
+    if !self.auth_admin
+      @hall.destroy
+      respond_to do |format|
+        format.html { redirect_to halls_url, notice: 'Hall was successfully destroyed.' }
+        format.json { head :no_content }
+      end 
     end
   end
 
