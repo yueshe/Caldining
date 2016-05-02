@@ -8,7 +8,7 @@ class ParserWorker
   include Sidekiq::Worker
   include Sidetiq::Schedulable
   recurrence backfill: true do
-    daily.hour_of_day(7)
+    daily.hour_of_day(10)
   end
   
   def perform
