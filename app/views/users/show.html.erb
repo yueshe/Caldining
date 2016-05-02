@@ -91,7 +91,7 @@
   </thead>
   
   <tbody>
-    <% @user.items.each do |item| %>
+    <% @todays_servings.each do |item| %>
       <tr class= "food">
         <td class = "servings"><%= Serving.find_by(item: item.id).total %></td>
         <td class = "name"><%= link_to item.name, item %></td>
