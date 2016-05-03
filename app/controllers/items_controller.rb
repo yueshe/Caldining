@@ -9,7 +9,8 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.where(date: Date.today)
+    @todays_items = Item.where(date: Time.now.utc.to_date)
+    @items = Item.all
     @halls = Hall.all
   end
 
