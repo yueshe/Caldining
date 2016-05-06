@@ -57,7 +57,7 @@ class ParserWorker
       item_doc = Nokogiri::HTML(open(item_url))
       
       # NOTE: currently, we always update existing item records; maybe allow skipping in future?
-      curr_item = Item.find_or_create_by(name: item.text, location: location_name, date: Date.current, mealtime: meal_name)
+      curr_item = Item.find_or_create_by(name: item.text, location: location_name, date: Time.now.utc.in_time_zone("Pacific Time (US & Canada)").to_date, mealtime: meal_name)
     
       # Check nutrition availability. If unavailable, add to items and skip to next iter.
       if item_doc.css("font").select{|candidate| candidate.css("i").text =~ /^Nutritional Information is not available/}.empty?

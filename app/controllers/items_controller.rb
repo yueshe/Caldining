@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @todays_items = Item.where(date: Time.now.utc.to_date)
+    @todays_items = Item.where(date: Time.now.utc.in_time_zone("Pacific Time (US & Canada)").to_date)
     @items = Item.all
     @halls = Hall.all
   end
