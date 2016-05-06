@@ -26,7 +26,7 @@ Given /the database is setup/ do
         :protein => 0,
         :sodium => 100,
         :location => "Crossroads",
-        :date => Date.current,
+        :date => Time.now.utc.in_time_zone("Pacific Time (US & Canada)").to_date,
         :mealtime => "Breakfast"
         )
 end  
